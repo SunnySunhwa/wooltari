@@ -1,5 +1,8 @@
 import { HospitalComponent } from './dev/hospital/hospital.component';
-import { PetComponent } from './dev/pet/pet.component';
+import {
+  PetComponent,
+  PetRegisterComponent
+} from './dev/pet/components';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
