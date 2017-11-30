@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-pet',
   template: `
     <p>
-      pet works!
+      pet works
     </p>
   `,
   styles: []
