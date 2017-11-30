@@ -8,6 +8,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   { path: '', component: PetComponent },
+  { path: 'register', component: PetRegisterComponent },
   { path: 'hospital', component: HospitalComponent }
 ];
 
