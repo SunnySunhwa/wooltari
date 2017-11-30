@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { DevComponent } from './dev/dev.component';
@@ -20,7 +20,8 @@ import { HospitalComponent } from './dev/hospital/hospital.component';
     HospitalComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
