@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-dashboard',
   template: `
     <p>
-      dashboard works!
+      dashboard works! branch add
     </p>
   `,
   styles: []
