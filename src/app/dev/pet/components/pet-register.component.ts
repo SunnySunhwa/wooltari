@@ -10,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
     <div class="thumb">
       <div> Thumb img </div>
       <input type="text" placeholder="Write your pet's name" />
-      <i class="edit">icon</i>
+      <i class="icon-edit">icon</i>
     </div>
   </div>
   <div class="row box-container">
