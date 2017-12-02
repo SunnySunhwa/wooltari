@@ -4,10 +4,10 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-hospital',
   template: `
     <p>
-      hospital works!
+      hospital works! saa
     </p>
   `,
-  styles: []
+  styles: ['./hospital.component.scss']
 })
 export class HospitalComponent implements OnInit {
 

@@ -20,7 +20,7 @@ import { HospitalComponent } from './dev/hospital/hospital.component';
     DashboardComponent,
     PetComponent,
     PetRegisterComponent,
-    HospitalComponent
+    HospitalComponent,
   ],
   imports: [
     BrowserModule,
