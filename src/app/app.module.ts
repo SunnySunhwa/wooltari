@@ -6,11 +6,13 @@ import { AppComponent } from './app.component';
 import { DevComponent } from './dev/dev.component';
 import { UserComponent } from './dev/user/user.component';
 import { DashboardComponent } from './dev/dashboard/dashboard.component';
+import { SidebarComponent } from './dev/dashboard/sidebar.component';
 import {
   PetComponent,
   PetRegisterComponent
 } from './dev/pet/components';
 import { HospitalComponent } from './dev/hospital/hospital.component';
+
 
 @NgModule({
   declarations: [
@@ -20,7 +22,8 @@ import { HospitalComponent } from './dev/hospital/hospital.component';
     DashboardComponent,
     PetComponent,
     PetRegisterComponent,
-    HospitalComponent
+    HospitalComponent,
+    SidebarComponent,
   ],
   imports: [
     BrowserModule,

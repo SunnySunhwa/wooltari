@@ -3,11 +3,10 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-dashboard',
   template: `
-
-  
+  <sidebar></sidebar>
   <div class="container">
     <h1>Dashboard</h1>
-    <div class="pet-profile">
+    <div class="summary-view pet-profile">
       <div class="pet-profile-view">
         <button class="btn-edit-pet">edit</button>
         <p class="pet-info-img"><img src="" alt="동물사진(Pet Image)"></p>
@@ -58,6 +57,19 @@ import { Component, OnInit } from '@angular/core';
           <li>red</li>
         </ul>
       </div>
+    </div>
+
+    <div class="summary-view pet-graph">
+      <h2>Graph</h2>
+    </div>
+
+    <div class="summary-view pet-vaccination">
+      <h2>Vaccination</h2>
+    </div>
+
+    <div class="summary-view pet-medical-info">
+      <h2>Medical Info</h2>
+    </div>
   </div>
   `,
   styleUrls: ['./dashboard.css']

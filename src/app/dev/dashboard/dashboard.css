@@ -25,7 +25,22 @@ ul,li {
     width: 90%;
 	max-width: 70em;
 	margin: 0 auto;
-	padding: 0 4em 3.125em 6em;
+	padding: 0 5em 3.125em 10em;
+}
+
+.summary-view {
+    margin-bottom:30px;
+    border: 1px solid #ccc;
+}
+
+.summary-view:last-child {
+    margin-bottom: 0;
+}
+
+.pet-profile:after {
+    display: block;
+    clear: both;
+    content: '';
 }
 
 .pet-profile-view{
@@ -58,9 +73,12 @@ ul,li {
 
 .pet-profile-view, 
 .pet-info-img, 
-.pet-info-details, 
-.pet-profile-keywords {
+.pet-info-details {
     float: left;
+}
+
+.pet-profile-keywords {
+    float: right;
 }
 
 .pet-profile:after {
@@ -70,7 +88,7 @@ ul,li {
 }
 
 .pet-info-details {
-    margin: 30px 10px 0 10px;
+    margin: 30px 10px 0 20px;
     font-size: 0.9em;
 }
 
