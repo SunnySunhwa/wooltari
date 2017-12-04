@@ -1,5 +1,4 @@
 import { SignUpComponent } from './dev/user/sign-up/sign-up.component';
-import { HospitalComponent } from './dev/hospital/hospital.component';
 import { DashboardComponent } from './dev/dashboard/dashboard.component';
 import {
   PetComponent,
@@ -12,7 +11,6 @@ const routes: Routes = [
   { path: 'signup', component: SignUpComponent },
   { path: '', component: PetComponent },
   { path: 'register', component: PetRegisterComponent },
-  { path: 'hospital', component: HospitalComponent },
   { path: 'dashboard', component: DashboardComponent }
 ];
 
