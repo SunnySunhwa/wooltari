@@ -11,11 +11,7 @@ import {
   PetComponent,
   PetRegisterComponent
 } from './dev/pet/components';
-<<<<<<< HEAD
-import { HospitalComponent } from './dev/hospital/hospital.component';
 import { SignUpComponent } from './dev/user/sign-up/sign-up.component';
-=======
->>>>>>> 01c3019c918e23e5a9bd6cab70da13a7128a4d5b
 
 
 @NgModule({
@@ -26,7 +22,6 @@ import { SignUpComponent } from './dev/user/sign-up/sign-up.component';
     DashboardComponent,
     PetComponent,
     PetRegisterComponent,
-    HospitalComponent,
     SidebarComponent,
     SignUpComponent,
     SidebarComponent,
