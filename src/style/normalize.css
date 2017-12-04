@@ -180,10 +180,10 @@ section {
  * `article` contexts in Chrome, Firefox, and Safari.
  */
 
-/* h1 {
+h1 {
   font-size: 2em;
   margin: 0.67em 0;
-} */
+}
 
 
 /* Grouping content
@@ -665,6 +665,7 @@ template {
 [hidden] {
   display: none;
 }
+<<<<<<< HEAD:src/styles.scss
 
 /* body*/
 
@@ -674,3 +675,5 @@ body{
 }
 
 
+=======
+>>>>>>> 01c3019c918e23e5a9bd6cab70da13a7128a4d5b:src/style/normalize.css
