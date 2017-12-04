@@ -5,11 +5,15 @@ import { Component, OnInit } from '@angular/core';
   template: `
     <h1>Sign in</h1>
     <div class="container">
-      <h2>WOOLTARI</h2>
-      <div class="logo">
-        <img class="logo-image" src="" alt="Wooltari's logo">
+
+      <div class="row profile">
+        <h2>WOOLTARI</h2>
+        <div class="logo">
+          <div> logo img </div>
+          <img class="logo-image" src="" alt="Wooltari's logo">
+        </div>
       </div>
-      
+
       <div class="box-container">
         <div class="box-center">
           <div class="right-elem">
