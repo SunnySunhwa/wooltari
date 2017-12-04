@@ -14,31 +14,50 @@ import { Component, OnInit } from '@angular/core';
         </div>
       </div>
 
-      <div class="box-container">
+      <div class="row-user box-container">
         <div class="box-center">
-          <div class="right-elem">
-            <div class="sign-up-link"><a href="#">Sign Up</a></div>
-            <div class="sign-in-link"><a href="#">Sign In</a></div>
-          </div>
-          <div class="center-elem">
-            <div class="input-email">
-              <input type="email" name="useremail" id="user-email" class="">
-              <label for="user-email">User Email</label>
+
+          <div class="right-side">
+            <div class="elem-user">
+              <div class="elem-conts">
+                <span class="sign-up-link"><a href="#">Sign Up</a></span>
+                <span class="sign-in-link"><a href="#">Sign In</a></span>
+              </div>
             </div>
           </div>
-          <div class="center-elem">
-            <div class="input-password">
-              <input type="password" name="userpassword" id="user-password" class="">
-              <label for="user-password">User Password</label>
+
+          <div class="elem-user">
+            <div class="elem-conts">
+              <div class="input-email">
+                <input type="email" name="useremail" id="user-email" class="" placeholder="iLovePets@example.com">
+              </div>
             </div>
           </div>
+
+          <div class="elem-user">
+            <div class="elem-conts">
+              <h4 class="elem-title">Password</h4>
+              <div class="input-password">
+                <input type="password" name="userpassword" id="user-password" class="" placeholder="Enter Password">
+              </div>
+            </div>
+          </div>
+
           <div class="remember-me">
             <input type="checkbox" class="remember-me-checkbox">
           </div>
         </div>
+      </div>
+      <div class="facebook-sign-in">Facebook sign in</div>
+      <div class="google-sign-in">Google sign in</div>
+
+      <div class="row box-footer">
+        <div class="btn-set-wrapper">
+          <button class="btn btn-type1 bg-main">Submit</button>
+          <button class="btn btn-type1 bg-grey">Cancel</button>
+        </div>
+      </div>
     </div>
-    <div class="facebook-sign-in">Facebook sign in</div>
-    <div class="google-sign-in">Google sign in</div>
   `,
   styles: []
 })
