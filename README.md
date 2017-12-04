@@ -1,27 +1,13 @@
-# Wooltari
+# Wooltari 규칙
+- 본인 페이지 작성할 시 하단의 형식을 가져다가 내용부분부터 작성 시작
+- 클래스명: wrap, container 사용금지 
+- h1태그 사용금지
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.5.2.
 
-## Development server
+```html
+<h1>해당 페이지명 </h1>
+<div class="container">
+    이 안에서 내용 작성
+</div>
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+```
