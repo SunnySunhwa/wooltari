@@ -54,7 +54,7 @@ import { Component, OnInit } from '@angular/core';
           <li>Age<strong>11</strong></li>
           <li>Human Age<strong>63</strong></li>
           <li>Age<strong>11</strong></li>
-          <li>red</li>
+          <li>red </li>
         </ul>
       </div>
     </div>
