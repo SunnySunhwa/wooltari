@@ -13,6 +13,7 @@ import {
   PetRegisterComponent
 } from './dev/pet/components';
 import { HospitalComponent } from './dev/hospital/hospital.component';
+import { MedicalInfoComponent } from './dev/medical-info/medical-info.component';
 
 
 @NgModule({
@@ -24,10 +25,8 @@ import { HospitalComponent } from './dev/hospital/hospital.component';
     PetComponent,
     PetRegisterComponent,
     HospitalComponent,
-<<<<<<< HEAD
     SidebarComponent,
-=======
->>>>>>> hospital
+    MedicalInfoComponent,
   ],
   imports: [
     BrowserModule,
