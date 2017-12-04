@@ -5,7 +5,6 @@ import { Component, OnInit } from '@angular/core';
   template: `
     <h1>Sign in</h1>
     <div class="container">
-
       <div class="row profile">
         <h2>WOOLTARI</h2>
         <div class="logo">
@@ -16,7 +15,6 @@ import { Component, OnInit } from '@angular/core';
 
       <div class="row-user box-container">
         <div class="box-center">
-
           <div class="right-side">
             <div class="elem-user">
               <div class="elem-conts">
@@ -29,27 +27,30 @@ import { Component, OnInit } from '@angular/core';
           <div class="elem-user">
             <div class="elem-conts">
               <div class="input-email">
-                <input type="email" name="useremail" id="user-email" class="" placeholder="iLovePets@example.com">
+                <input type="email" name="useremail" id="user-email" class="input-form" placeholder="iLovePets@example.com">
               </div>
             </div>
           </div>
 
           <div class="elem-user">
             <div class="elem-conts">
-              <h4 class="elem-title">Password</h4>
               <div class="input-password">
-                <input type="password" name="userpassword" id="user-password" class="" placeholder="Enter Password">
+                <input type="password" name="userpassword" id="user-password" class="input-form" placeholder="Enter Password">
               </div>
             </div>
           </div>
 
-          <div class="remember-me">
-            <input type="checkbox" class="remember-me-checkbox">
+          <div class="elem-user">
+            <div class="remember-me">
+              <input type="checkbox" class="remember-me-checkbox">
+              <span>Remeber me</span>
+            </div>
           </div>
+
+          <div class="facebook-sign-in">Facebook sign in</div>
+          <div class="google-sign-in">Google sign in</div>
         </div>
       </div>
-      <div class="facebook-sign-in">Facebook sign in</div>
-      <div class="google-sign-in">Google sign in</div>
 
       <div class="row box-footer">
         <div class="btn-set-wrapper">
