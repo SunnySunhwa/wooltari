@@ -10,6 +10,7 @@ div,
 span,
 applet,
 object,
+
 iframe,
 h1,
 h2,
@@ -673,7 +674,3 @@ body{
   background-color: #304b89;
   color: #fff;
 }
-
-
-=======
->>>>>>> 01c3019c918e23e5a9bd6cab70da13a7128a4d5b:src/style/normalize.css
