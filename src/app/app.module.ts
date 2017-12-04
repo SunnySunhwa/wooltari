@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { AgmCoreModule } from '@agm/core';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
@@ -12,7 +11,6 @@ import {
   PetComponent,
   PetRegisterComponent
 } from './dev/pet/components';
-import { HospitalComponent } from './dev/hospital/hospital.component';
 
 
 @NgModule({
@@ -23,18 +21,11 @@ import { HospitalComponent } from './dev/hospital/hospital.component';
     DashboardComponent,
     PetComponent,
     PetRegisterComponent,
-    HospitalComponent,
-<<<<<<< HEAD
     SidebarComponent,
-=======
->>>>>>> hospital
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyBRWdV7hVNkFodjr_PouORs8pjwkCcOF0Y'
-    })
   ],
   providers: [],
   bootstrap: [AppComponent]
