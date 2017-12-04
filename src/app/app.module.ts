@@ -13,7 +13,11 @@ import {
   PetRegisterComponent
 } from './dev/pet/components';
 import { HospitalComponent } from './dev/hospital/hospital.component';
+<<<<<<< HEAD
 import { SignUpComponent } from './dev/user/sign-up/sign-up.component';
+=======
+import { SignInComponent } from './dev/user/sign-in/sign-in.component';
+>>>>>>> login
 
 
 @NgModule({
@@ -27,6 +31,7 @@ import { SignUpComponent } from './dev/user/sign-up/sign-up.component';
     HospitalComponent,
     SidebarComponent,
     SignUpComponent,
+    SignInComponent,
   ],
   imports: [
     BrowserModule,
