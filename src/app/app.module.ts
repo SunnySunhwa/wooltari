@@ -24,10 +24,7 @@ import { HospitalComponent } from './dev/hospital/hospital.component';
     PetComponent,
     PetRegisterComponent,
     HospitalComponent,
-<<<<<<< HEAD
     SidebarComponent,
-=======
->>>>>>> hospital
   ],
   imports: [
     BrowserModule,
