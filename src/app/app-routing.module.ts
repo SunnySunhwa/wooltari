@@ -1,5 +1,4 @@
 import { MembershipComponent } from './dev/user/membership/membership.component';
-import { HospitalComponent } from './dev/hospital/hospital.component';
 import { DashboardComponent } from './dev/dashboard/dashboard.component';
 import {
   PetComponent,
@@ -12,7 +11,6 @@ const routes: Routes = [
   { path: 'membership', component: MembershipComponent },
   { path: '', component: PetComponent },
   { path: 'register', component: PetRegisterComponent },
-  { path: 'hospital', component: HospitalComponent },
   { path: 'dashboard', component: DashboardComponent }
 ];
 

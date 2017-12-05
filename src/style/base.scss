@@ -1,0 +1,75 @@
+/* Color scheme */
+$white: #fff;
+$grey1: #f9fafa;
+$grey2:#DBE5EA;
+$grey3: #bdc3c8;
+$grey4: #7f8c8d;
+$deep: #35495e;
+$black: #34495e;
+$orange: #FE7A53;
+$green: #1aa1a1;
+$greenL: #73bbc0;
+$greenD: #0b575f;
+
+
+body {
+  background: $deep;
+} 
+h1 {
+  opacity: 0;
+  height: 5%;
+  position: relative;
+}
+
+
+.container {
+  width: 90%;
+  max-width: 70em;
+  margin: 0 auto;
+  padding: 0 5em 3.125em 10em;
+}
+
+/* Button */
+button {
+  text-transform: uppercase;
+  font-size: 1rem;
+}
+
+.btn-set-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.btn {
+  cursor: pointer;
+  min-width: 150px;
+  max-width: 200px;
+  display: block;
+  margin: 1em;
+  border: none;
+  background: none;
+  vertical-align: middle;
+  -webkit-backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.btn-type1 {
+  font-weight: 500;
+  letter-spacing: .05rem;
+  line-height: 1.4;
+  padding: .25em;
+  border-radius: 18px;
+}
+
+/* Color palette */
+.bg-main {
+  background: rgba($orange, 1);
+  color: $white;
+}
+
+.bg-grey {
+  background: rgba($grey2, 1);
+  color: $grey4;
+}
+
