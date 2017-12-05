@@ -4,32 +4,59 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-membership',
   template: `
     <h1>Membership</h1>
-    
-    <div class="profile">
-      <img class="profile-image" src="" alt="profile-image-preview">
-    </div>
-    
-    <div class="sign-up card-section">
-      
-      <div class="input-email">
-        <label for="user-email">User Email</label>
-        <input type="email" name="useremail" id="user-email" class="">
+    <div class="container">
+
+      <div class="row profile">
+        <h2>user name</h2>
+        <div class="thumb">
+          <div> Thumb img </div>
+          <div> Your name will be located.</div>
+          <i class="icon-edit">icon</i>
+        </div>
       </div>
-      <div class="input-password">
-        <label for="user-password">Password</label>
-        <input type="password" name="userpassword" id="user-password" class="">
+
+      <div class="row-user box-container">
+        <div class="box-center">
+          <div class="elem-user">
+            <h4 class="elem-title">User Email</h4>
+            <div class="elem-conts">
+              <div class="input-email">
+                Your email will be located.
+              </div>
+            </div>
+          </div>
+
+          <div class="elem-user">
+            <h4 class="elem-title">Current Password</h4>
+            <div class="input-password">
+              <input type="password" name="userpassword" id="user-password" class="" placeholder="Enter Password">
+            </div>
+          </div>
+
+          <div class="elem-user">
+            <h4 class="elem-title">New Password</h4>
+            <div class="new-password">
+              <input type="password" name="newpassword" id="new-password" class="" placeholder="New Password">
+              <div class="validation">새 비밀번호가 너무 취약합니다.</div>
+            </div>
+          </div>
+
+          <div class="elem-user">
+            <h4 class="elem-title">Comfirm Password</h4>
+            <div class="confirm-password">
+              <input type="password" name="checkpassword" id="check-password" class="" placeholder="Confirm New Password">
+              <div class="validation">비밀번호가 같지 않습니다.</div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="new-password">
-        <label for="change-password">Password</label>
-        <input type="password" name="changepassword" id="change-password" class="">
+
+      <div class="row box-footer">
+        <div class="btn-set-wrapper">
+          <button class="btn btn-type1 bg-main">Submit</button>
+          <button class="btn btn-type1 bg-grey">Cancel</button>
+        </div>
       </div>
-      <div class="confirm-password">
-        <label for="check-password">Confirm Password</label>
-        <input type="password" name="checkpassword" id="check-password" class="">
-      </div>
-      
-      <button class="btn-sign-in">Submit</button>
-      <button class="btn-cancel">Cancel</button>
     </div>
   `,
   styles: []

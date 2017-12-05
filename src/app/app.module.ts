@@ -14,10 +14,7 @@ import {
 
 import { SignUpComponent } from './dev/user/sign-up/sign-up.component';
 import { SignInComponent } from './dev/user/sign-in/sign-in.component';
-
 import { MembershipComponent } from './dev/user/membership/membership.component';
-
-
 
 @NgModule({
   declarations: [
