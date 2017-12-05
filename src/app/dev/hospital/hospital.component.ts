@@ -35,27 +35,79 @@ interface Marker {
       </agm-marker>
     </agm-map>
   </div>
-  <div class="row">
-    <div class="col-md-12">
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h3 class="panel-title">Add new marker</h3>
+  <!--card list-->
+  <div class="flexbox">
+  <!-- card list -->
+  <ul class="flex-card-list">
+    <!-- card list item -->
+    <li class="flex-card-listitem">
+      <!-- card module -->
+      <div class="flex-card">
+        <!-- image container -->
+        <div class="flex-card-image">
+          <img src="http://placehold.it/300x200&text=%20" />
         </div>
-        <div class="panel-body">
-          <form>
-
-          </form>
+        <!-- content container -->
+        <div class="flex-card-content">
+          <h3 class="flex-card-heading">First</h3>
+          <p>I'm a card and I'm first.</p>
+          <a href="#" class="flex-card-button">Button</a>
         </div>
       </div>
-    </div>
-  </div>
+    </li>
+    <!-- card list item -->
+    <li class="flex-card-listitem">
+      <!-- card module -->
+      <div class="flex-card">
+        <!-- image container -->
+        <div class="flex-card-image">
+          <img src="http://placehold.it/300x200&text=%20" />
+        </div>
+        <!-- content container -->
+        <div class="flex-card-content">
+          <h3 class="flex-card-heading">Second</h3>
+          <p>I'm a card and I'm second.</p>
+          <a href="#" class="flex-card-button">Button</a>
+        </div>
+      </div>
+    </li>
+    <!-- card list item -->
+    <li class="flex-card-listitem">
+      <!-- card module -->
+      <div class="flex-card">
+        <!-- image container -->
+        <div class="flex-card-image">
+          <img src="http://placehold.it/300x200&text=%20" />
+        </div>
+        <!-- content container -->
+        <div class="flex-card-content">
+          <h3 class="flex-card-heading">Third</h3>
+          <p>I'm a card and I'm third with lots of text spanning multiple lines.</p>
+          <a href="#" class="flex-card-button">Button</a>
+        </div>
+      </div>
+    </li>
+    <!-- card list item -->
+    <li class="flex-card-listitem">
+      <!-- card module -->
+      <div class="flex-card">
+        <!-- image container -->
+        <div class="flex-card-image">
+          <img src="http://placehold.it/300x200&text=%20" />
+        </div>
+        <!-- content container -->
+        <div class="flex-card-content">
+          <h3 class="flex-card-heading">Fourth</h3>
+          <p>I'm a card and I'm fourth.</p>
+          <a href="#" class="flex-card-button">Button</a>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
+<!--card list-->
   `,
-  styles : [`agm-map {height:300px;}
-  .hospital-header{height:70px; width:98%; background:#FF5A5F; color:#fff;
-  padding-left:2%; line-height:70px;
-  }
-  .hospital-map-container{padding-top:30px;}
-  `]
+  styleUrls: ['./hospital.component.scss']
 })
 export class HospitalComponent implements OnInit {
   title: string;
@@ -91,13 +143,13 @@ export class HospitalComponent implements OnInit {
   }
   // Markers
   /* clickedMarker(marker, index:number) {
-    console.log(`clicked Marker: 
+    console.log(`clicked Marker:
     ${marker.name} at index ${index}`)
   }
   */
   /*
      clickedMarker(marker: marker, index:number) {
-    console.log(`clicked Marker: 
+    console.log(`clicked Marker:
     ${marker.name} at index ${index}`)
   }
   */

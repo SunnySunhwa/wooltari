@@ -1,9 +1,55 @@
 
-
-p{
-    color: red;
+agm-map {height:300px;}
+.hospital-header{height:70px; width:98%; background:#FF5A5F; color:#fff;
+padding-left:2%; line-height:70px;
 }
 
-h1{
-    color:#aaa;
+.hospital-map-container{padding-top:30px;}
+
+ul
+{
+  list-style-type: none;
+  padding: 0;
+}
+
+/* Put behind .flexbox for Feature detection with Modernizr */
+.flexbox .flex-card-list {
+  display:flex;
+  flex-wrap:wrap;
+  justify-content: center;
+}
+
+.flexbox .flex-card-listitem {
+  display:flex;
+  background-color: #fff;
+  padding: 1em;
+}
+
+.flexbox .flex-card {
+  display:flex;
+  flex-direction:column;
+}
+
+/* common to flex and non-flex */
+.flex-card-list li {
+  width:300px;
+  margin: 1em;
+}
+
+.flexbox .flex-card-content {
+  display:flex;
+  flex:1 0 auto; /* We have to add a basis for IE10/11 */
+  flex-direction:column;
+}
+
+.flexbox .flex-card-content p {
+  flex:1 0 auto; /* We have to add a basis for IE10/11 */
+}
+
+.flex-card-button {
+  background-color: #00aeef;
+  padding: 1em;
+  text-align:center;
+  text-decoration: none;
+  color: white;
 }
