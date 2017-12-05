@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-btn',
   template: `
-<h1> 버튼형식 샘플링 </h1>
+<h1> 버튼형식 샘플링</h1>
 <div class="container">
   <div class="btn-sample bg-white">
       <h2>버튼 타입</h2>
