@@ -27,7 +27,10 @@ import { MembershipComponent } from './dev/user/membership/membership.component'
     SidebarComponent,
     SignUpComponent,
     SignInComponent,
+<<<<<<< HEAD
     MembershipComponent,
+=======
+>>>>>>> login
     SidebarComponent,
   ],
   imports: [
