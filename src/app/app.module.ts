@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { AgmCoreModule } from '@agm/core';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
@@ -11,6 +12,7 @@ import {
   PetComponent,
   PetRegisterComponent
 } from './dev/pet/components';
+import { BtnComponent } from './dev/btn/btn.component';
 
 
 @NgModule({
@@ -22,10 +24,14 @@ import {
     PetComponent,
     PetRegisterComponent,
     SidebarComponent,
+    BtnComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyBRWdV7hVNkFodjr_PouORs8pjwkCcOF0Y'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -18,24 +18,47 @@ import { Component, OnInit } from '@angular/core';
         <div class="elem">
           <h4 class="elem-title">Species</h4>
           <div class="elem-conts">
-            <div class="input-group text-radio">
-              <input type="radio" name="species" checked/>
-              <label for="species-cat"><span>Cat</span></label>
-              <input type="radio" name="species" />
-              <label for="species-dog"><span>Dog</span></label>
-            </div>
+            <div class="check-radio">
+              <ul class="list">
+                <li class="list-item">
+                 <input type="radio" class="radio-btn" name="choice" id="species-cat" checked/>
+                 <label for="species-cat" class="label">Cat</label>
+                </li>
+                <li class="list-item">
+                 <input type="radio" class="radio-btn" name="choice" id="species-dog" />
+                 <label for="species-dog" class="label">Dog</label>
+                </li>
+              </ul>
+            </div><!-- //check-radio -->
           </div>
         </div><!-- // elem1-->
         <div class="elem">
           <h4 class="elem-title">Breeds</h4>
           <div class="elem-conts">
-            <div class="input-group">
-              <select aria-placeholder="Select your pet's breeds">
-                <option>Affenpinscher</option>
-                <option>Afghan Hound</option>
-                <option>Airedale Terrier</option>
-                <option>Others</option>
-              </select>
+            <div class="select2">
+              <label>
+                  <input type="checkbox" name="placeholder">
+                  <i class="toggle icon icon-plus">+</i>
+                  <i class="toggle icon icon-minus">-</i>
+                  <span class="placeholder">select</span>
+                  <label class="option">
+                      <input type="radio" name="option">
+                      <span class="title">Select Option1</span>
+                  </label>
+          
+                  <label class="option">
+                    <input type="radio" name="option">
+                    <span class="title">Select Option2</span>
+                  </label>
+                  <label class="option">
+                    <input type="radio" name="option">
+                    <span class="title">Select Option3</span>
+                  </label>
+                  <label class="option">
+                    <input type="radio" name="option">
+                    <span class="title">Select Option4</span>
+                  </label>
+              </label>
             </div>
           </div>
         </div><!-- //elem2 -->
@@ -132,9 +155,9 @@ import { Component, OnInit } from '@angular/core';
   </div> <!--// box-container-->
   <div class="row box-footer">
     <div class="btn-set-wrapper">
-      <button class="btn btn-type1 bg-main">Submit</button>
+      <button class="btn btn-type1 bg-orange">Submit</button>
       <button class="btn btn-type1 bg-grey">Cancel</button>
-    </div>
+      </div>
   </div> <!-- // box-footer -->
 </div><!-- // container-->`,
   styleUrls: []
