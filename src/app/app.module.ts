@@ -26,14 +26,8 @@ import { MembershipComponent } from './dev/user/membership/membership.component'
     PetRegisterComponent,
     SidebarComponent,
     SignUpComponent,
-<<<<<<< HEAD
     SignInComponent,
-<<<<<<< HEAD
     MembershipComponent,
-=======
->>>>>>> login
-=======
->>>>>>> join
     SidebarComponent,
   ],
   imports: [
