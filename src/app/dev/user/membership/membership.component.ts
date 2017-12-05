@@ -10,11 +10,11 @@ import { Component, OnInit } from '@angular/core';
         <h2>user name</h2>
         <div class="thumb">
           <div> Thumb img </div>
-          <input type="text" placeholder="Write your name">
+          <div> Your name will be located.</div>
           <i class="icon-edit">icon</i>
         </div>
       </div>
-      
+
       <div class="row-user box-container">
         <div class="box-center">
           <div class="elem-user">
@@ -25,19 +25,19 @@ import { Component, OnInit } from '@angular/core';
               </div>
             </div>
           </div>
-    
+
           <div class="elem-user">
             <h4 class="elem-title">Current Password</h4>
             <div class="input-password">
               <input type="password" name="userpassword" id="user-password" class="" placeholder="Enter Password">
             </div>
           </div>
-    
+
           <div class="elem-user">
             <h4 class="elem-title">New Password</h4>
             <div class="new-password">
               <input type="password" name="newpassword" id="new-password" class="" placeholder="New Password">
-              <div class="validation">비밀번호가 너무 취약합니다.</div>
+              <div class="validation">새 비밀번호가 너무 취약합니다.</div>
             </div>
           </div>
 
@@ -50,7 +50,7 @@ import { Component, OnInit } from '@angular/core';
           </div>
         </div>
       </div>
-    
+
       <div class="row box-footer">
         <div class="btn-set-wrapper">
           <button class="btn btn-type1 bg-main">Submit</button>
