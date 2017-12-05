@@ -12,7 +12,12 @@ import {
   PetComponent,
   PetRegisterComponent
 } from './dev/pet/components';
+<<<<<<< HEAD
 import { BtnComponent } from './dev/btn/btn.component';
+=======
+import { HospitalComponent } from './dev/hospital/hospital.component';
+
+>>>>>>> 5f91ff52f1c54dba257aec997fc0f39f25928299
 
 
 @NgModule({
@@ -24,7 +29,11 @@ import { BtnComponent } from './dev/btn/btn.component';
     PetComponent,
     PetRegisterComponent,
     SidebarComponent,
+<<<<<<< HEAD
     BtnComponent,
+=======
+    HospitalComponent,
+>>>>>>> 5f91ff52f1c54dba257aec997fc0f39f25928299
   ],
   imports: [
     BrowserModule,
