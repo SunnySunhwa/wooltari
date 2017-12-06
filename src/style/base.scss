@@ -1,3 +1,6 @@
+
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+
 /* Color scheme */
 $white: #fff;
 $grey1: #f9fafa;
@@ -5,7 +8,9 @@ $grey2:#DBE5EA;
 $grey3: #bdc3c8;
 $grey4: #7f8c8d;
 $deep: #35495e;
-$black: #34495e;
+$dark: #2a3a4b;
+$black: #253341;
+
 $orange: #FE7A53;
 $green: #1aa1a1;
 $greenL: #73bbc0;
@@ -14,13 +19,14 @@ $greenD: #0b575f;
 
 body {
   background: $deep;
+  box-sizing: border-box;
+  font-family: 'Roboto',sans-serif;
 } 
 h1 {
   opacity: 0;
   height: 5%;
   position: relative;
 }
-
 
 .container {
   width: 90%;
@@ -30,10 +36,17 @@ h1 {
 }
 
 /* Button */
+
 button {
   text-transform: uppercase;
   font-size: 1rem;
+   
 }
+
+ input[type=text] {
+   padding: .5em;
+ }
+
 
 .btn-set-wrapper {
   width: 100%;
@@ -52,24 +65,516 @@ button {
   vertical-align: middle;
   -webkit-backface-visibility: hidden;
   -moz-osx-font-smoothing: grayscale;
+  transition: all 0.3s ease;
+  &:hover {
+    font-weight: bold;
+  }
+
+
 }
+
+/* basic button */
 
 .btn-type1 {
   font-weight: 500;
   letter-spacing: .05rem;
-  line-height: 1.4;
+  line-height: 1.7;
   padding: .25em;
-  border-radius: 18px;
+  border-radius: 3em;
+  transition: all 150ms linear;
+
+  &.bg-orange {
+     background: lighten($orange, 3%);
+     border: 1px solid darken($orange, 4%);
+     box-shadow: 0px 2px 0 darken($orange, 5%),
+     1px 2px 3px darken($orange, 2%);
+     color: white;
+     &:hover{
+        background: darken($orange, 1.5%);
+        border: 1px solid rgba(#000, .05);
+        box-shadow: 1px 1px 2px rgba(#fff, .2);
+        color: lighten($orange, 18%);
+        text-decoration: none;
+        text-shadow: -1px -1px 0 darken($orange, 9.5%);
+
+     }
+
+  }
+
+  &.bg-green{
+    background: $green;
+    border-color: $green;
+    color:white;
+    &:hover {
+      background: lighten($green, 5%);
+      border-color: ligthten($green, 5%);
+    }
+    &:active {
+      background: $green;
+      border-color: $green;
+      color: darken ($green, 30%);
+    }
+  }
+
+  &.bg-grey {
+    background: rgba($grey2, 1);
+    color: $grey4;
+  }
+
 }
 
-/* Color palette */
-.bg-main {
-  background: rgba($orange, 1);
-  color: $white;
+.btn-type2 {
+  border-radius: 3em;
+  line-height: 1.6em;
+  &.line-orange{
+    border: 3px solid $orange;
+    color: $orange;
+    background: {
+      image: linear-gradient(to bottom, transparent 50%, $orange 50%);
+      position: 0% 0%;
+      size: 200%;
+    }
+    transition: background 150ms ease-in-out,
+    color 150ms ease-in-out;
+    &:hover {
+      color: #fff;
+      background-position: 0 100%;
+    }
+  }
+  &.line-green{
+    border: 3px solid $green;
+    color: $green;
+    background: {
+      image: linear-gradient(to bottom, transparent 50%, $green 50%);
+      position: 0% 0%;
+      size: 200%;
+    }
+    transition: background 150ms ease-in-out,
+    color 150ms ease-in-out;
+    &:hover {
+      color: #fff;
+      background-position: 0 100%;
+    }
+  }
+  
+}
+.btn-type3 {
+  font-weight: 500;
+  letter-spacing: .05rem;
+  line-height: 1.7;
+  padding: .25em;
+  border-radius: 3em;
+  transition: all 150ms linear;
+  &.bg-orange {
+    background: lighten($orange, 4%);
+    border: 1px solid darken($orange, 3%);
+    box-shadow: 0px 2px 0 darken($orange, 5%), 1px 2px 2px darken($orange, 2%);
+    color: white;
+    &:hover {
+      background: darken($orange, 1.5%);
+      border: 1px solid rgba(#000, .05);
+      box-shadow: 1px 1px 2px rgba(#fff, .2);
+      color: lighten($orange, 18%);
+      text-decoration: none;
+      text-shadow: -1px -1px 0 darken($orange, 9.5%);
+    }
+  }
 }
 
-.bg-grey {
-  background: rgba($grey2, 1);
-  color: $grey4;
+
+
+.btn-type4 {
+  font-weight: 500;
+  letter-spacing: .05rem;
+  line-height: 2em;
+  padding: .25em;
+  transition: background-color 0.3s,
+  box-shadow 0.3s,
+  color 0.3s;
+
+
+  &.line-green{
+    border: 2px solid $green;
+    color: $grey3;
+    font-weight:bold;
+      &:hover {
+      background: darken($green, 5%);
+      color: white;
+      }
+  }
+
+  &.line-black{
+    border: 2px solid $grey4;
+    color: $grey4;
+    font-weight:bold;
+      &:hover {
+      background: $black;
+      color: $grey3;
+      }
+  }
 }
 
+/* 토글 라디오 타입*/
+.toggle-radio{
+  transition: all 0.2s ease;
+  .switch {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    width: 10em;
+    height: 3.5em;
+    text-align: center;
+    margin: -30px 0 0 -75px;
+    background: $green;
+    border-radius: 3em;
+  }
+
+  .bar {
+    position: absolute;
+    width: 20px;
+    height: 4px;
+    top: 50%;
+    left: 50%;
+    margin: -2px 0px 0px -4px;
+    background: #fff;
+    display: block;
+    transform: rotate(-45deg);
+  }
+
+  .bar:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 4px;
+    height: 12px;
+    margin-top: -8px;
+    background: #fff;
+    transition: all 0.2s ease;
+  }
+
+  input[type=radio] {
+    display: none;
+  }
+
+  .switch label {
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.2);
+    width: 60px;
+    line-height: 50px;
+    transition: all 0.2s ease;
+  }
+
+  label[for=yes] {
+    position: absolute;
+    left: 0px;
+    height: 20px;
+  }
+
+  label[for=no] {
+    position: absolute;
+    right: 0px;
+  }
+
+  #no:checked~.switch {
+    background: $grey4;
+    & span:after {
+      background: #fff;
+      height: 20px;
+      margin-top: -8px;
+      margin-left: 8px;
+    }
+  }
+  #yes:checked~.switch label[for=yes] {
+    color: #fff;
+  }
+
+  #no:checked~.switch label[for=no] {
+    color: #fff;
+  }
+
+}
+
+/* 체크 라디오 타입*/
+
+.check-radio {
+
+  .list {
+    display:flex;
+  }
+
+  .list-item {
+    position: relative;
+    &:hover .label {
+      &::before {
+        border: 0.3rem solid $grey3;
+      }
+    }
+  }
+
+  .radio-btn {
+    display: none;
+    &:checked+.label {
+      color: $green;
+      &::before {
+        border: 0.3rem solid $green;
+        background: white;
+      }
+    }
+  }
+
+  .label {
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    padding: 0 0.5rem;
+    color: $grey4;
+    text-transform: uppercase;
+    transition: all 0.25s linear;
+  }
+
+  .label::before {
+    display: block;
+    height: 0.4rem;
+    width: 0.4rem;
+    margin-right: 0.5rem;
+    content: "";
+    border: 0.3rem solid $grey3;
+    border-radius: 50%;
+    transition: all 0.25s linear;
+  }
+
+
+}
+
+/* 셀렉트 박스 */
+.select1 {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  margin: auto;
+  width: 330px;
+  height: 100%;
+  border: 2px solid rgba($orange, .5);
+  border-radius: 15px;
+
+  i.toggle {
+    position: absolute;
+    z-index: 4;
+    right: 1.5em;
+    top: 0.3em;
+    color: $deep;
+    &.icon{
+       font-size: 1.3em;
+    }
+  }
+
+  .title,
+  .placeholder {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 0.5em 1em;
+    background: white;
+    cursor: pointer;
+  }
+  &>label>input {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    display: block;
+    opacity: 0;
+    cursor: pointer;
+    &:checked {
+      z-index: 2;
+      ~i.toggle.icon-plus {
+        display: none;
+        
+      }
+      ~i.toggle.icon-minus {
+        display: block;
+      }
+    }
+    &:not(:checked) {
+      ~i.toggle.icon-minus {
+        display: none;
+      }
+      ~i.toggle.icon-plus {
+        display: block;
+      }
+      ~label.option input:not(:checked)~.title {
+        display: none!important;
+      }
+    }
+  }
+  & label>span.placeholder {
+    position: relative;
+    z-index: 0;
+    display: inline-block;
+    width: 100%;
+    color: $deep;
+    border-top: 0px;
+  }
+  label.option {
+    display: block;
+    overflow: hidden;
+    z-index: 1;
+    width: 100%;
+    transition: all 1s ease-out;
+    span.title {
+      color: $grey4;
+      position: relative;
+      z-index: 2;
+      transition: background .3s ease-out;
+
+      &:hover {
+        color: #fff;
+        background: rgba($orange, .8);
+        box-shadow: inset 0px 1px 0px rgba(0, 0, 0, .1);
+      }
+    }
+    input {
+      display: none;
+      &:checked~span.title {
+        position: absolute;
+        display: block;
+        z-index: 1;
+        top: 0px;
+        font-size: 12px;
+        background: white;
+        border-top: 0px;
+        box-shadow: none;
+        color: inherit;
+        width: 100%;
+      }
+    }
+  }
+}
+
+.select2 {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  margin: auto;
+  width: 200px;
+  height: 100%;
+ 
+  
+  i.toggle {
+    position: absolute;
+    z-index: 4;
+    right: 1.5em;
+    top: 0.3em;
+    color: $orange;
+    font-size: 1.3em;
+  }
+  .title,
+  .placeholder {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 0.5em 1em;
+    background: white;
+    cursor: pointer;
+  }
+  &>label>input {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    display: block;
+    opacity: 0;
+    cursor: pointer;
+    &:checked {
+      z-index: 2;
+      ~i.toggle.icon-plus {
+        display: none;
+      }
+      ~i.toggle.icon-minus {
+        display: block;
+      }
+    }
+    &:not(:checked) {
+      ~i.toggle.icon-minus {
+        display: none;
+      }
+      ~i.toggle.icon-plus {
+        display: block;
+      }
+      ~label.option input:not(:checked)~.title {
+        display: none!important;
+      }
+    }
+  }
+  & label>span.placeholder {
+    position: relative;
+    z-index: 0;
+    display: inline-block;
+    width: 100%;
+    color: $deep;
+    border-bottom: 1px solid $grey3;
+  }
+  label.option {
+    display: block;
+    overflow: hidden;
+    z-index: 1;
+    width: 100%;
+    transition: all 1s ease-out;
+    span.title {
+      color: $grey4;
+      position: relative;
+      background: $grey2;
+      z-index: 2;
+      transition: background .3s ease-out;
+
+      &:hover {
+        color: #fff;
+        background: $deep;
+        box-shadow: inset 0px 1px 0px rgba(0, 0, 0, .1);
+      }
+    }
+    input {
+      display: none;
+      &:checked~span.title {
+        position: absolute;
+        display: block;
+        z-index: 1;
+        top: 0px;
+        font-size: 12px;
+        background: white;
+        border-top: 0px;
+        box-shadow: none;
+        color: inherit;
+        width: 100%;
+      }
+    }
+  }
+}
+
+
+
+
+
+/* 버튼 샘플링 */
+
+.btn-sample {
+  button {
+    display: inline-block;
+  }
+  font-size: .8rem;
+  padding: 3em;
+  &.bg-white {
+    background: white;
+  }
+  &.bg-color {
+    background: $dark;
+    color: $grey2;
+  }
+  &.bg-orange {
+    background: $orange;
+  }
+}
