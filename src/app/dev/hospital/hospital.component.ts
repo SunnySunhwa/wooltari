@@ -10,9 +10,9 @@ interface Marker {
 @Component({
   selector: 'app-root',
   template: `
-  <div class="hospital-header">
-    <h1>{{ title }}</h1>
-  </div>
+ <div class="hospital-header">
+    <h2>{{ title }}</h2>
+ </div> 
   <div class="hospital-map-container">
     <agm-map
             [latitude]="lat"
@@ -37,75 +37,75 @@ interface Marker {
   </div>
   <!--card list-->
   <div class="flexbox">
-  <!-- card list -->
-  <ul class="flex-card-list">
-    <!-- card list item -->
-    <li class="flex-card-listitem">
-      <!-- card module -->
-      <div class="flex-card">
-        <!-- image container -->
-        <div class="flex-card-image">
-          <img src="http://placehold.it/300x200&text=%20" />
+    <!-- card list -->
+    <ul class="flex-card-list">
+      <!-- card list item -->
+      <li class="flex-card-listitem">
+        <!-- card module -->
+        <div class="flex-card">
+          <!-- image container -->
+          <div class="flex-card-image">
+            <img src="http://placehold.it/300x200&text=%20" />
+          </div>
+          <!-- content container -->
+          <div class="flex-card-content">
+            <h3 class="flex-card-heading">First</h3>
+            <p>I'm a card and I'm first.</p>
+            <a href="#" class="flex-card-button">Button</a>
+          </div>
         </div>
-        <!-- content container -->
-        <div class="flex-card-content">
-          <h3 class="flex-card-heading">First</h3>
-          <p>I'm a card and I'm first.</p>
-          <a href="#" class="flex-card-button">Button</a>
+      </li>
+      <!-- card list item -->
+      <li class="flex-card-listitem">
+        <!-- card module -->
+        <div class="flex-card">
+          <!-- image container -->
+          <div class="flex-card-image">
+            <img src="http://placehold.it/300x200&text=%20" />
+          </div>
+          <!-- content container -->
+          <div class="flex-card-content">
+            <h3 class="flex-card-heading">Second</h3>
+            <p>I'm a card and I'm second.</p>
+            <a href="#" class="flex-card-button">Button</a>
+          </div>
         </div>
-      </div>
-    </li>
-    <!-- card list item -->
-    <li class="flex-card-listitem">
-      <!-- card module -->
-      <div class="flex-card">
-        <!-- image container -->
-        <div class="flex-card-image">
-          <img src="http://placehold.it/300x200&text=%20" />
+      </li>
+      <!-- card list item -->
+      <li class="flex-card-listitem">
+        <!-- card module -->
+        <div class="flex-card">
+          <!-- image container -->
+          <div class="flex-card-image">
+            <img src="http://placehold.it/300x200&text=%20" />
+          </div>
+          <!-- content container -->
+          <div class="flex-card-content">
+            <h3 class="flex-card-heading">Third</h3>
+            <p>I'm a card and I'm third with lots of text spanning multiple lines.</p>
+            <a href="#" class="flex-card-button">Button</a>
+          </div>
         </div>
-        <!-- content container -->
-        <div class="flex-card-content">
-          <h3 class="flex-card-heading">Second</h3>
-          <p>I'm a card and I'm second.</p>
-          <a href="#" class="flex-card-button">Button</a>
+      </li>
+      <!-- card list item -->
+      <li class="flex-card-listitem">
+        <!-- card module -->
+        <div class="flex-card">
+          <!-- image container -->
+          <div class="flex-card-image">
+            <img src="http://placehold.it/300x200&text=%20" />
+          </div>
+          <!-- content container -->
+          <div class="flex-card-content">
+            <h3 class="flex-card-heading">Fourth</h3>
+            <p>I'm a card and I'm fourth.</p>
+            <a href="#" class="flex-card-button">Button</a>
+          </div>
         </div>
-      </div>
-    </li>
-    <!-- card list item -->
-    <li class="flex-card-listitem">
-      <!-- card module -->
-      <div class="flex-card">
-        <!-- image container -->
-        <div class="flex-card-image">
-          <img src="http://placehold.it/300x200&text=%20" />
-        </div>
-        <!-- content container -->
-        <div class="flex-card-content">
-          <h3 class="flex-card-heading">Third</h3>
-          <p>I'm a card and I'm third with lots of text spanning multiple lines.</p>
-          <a href="#" class="flex-card-button">Button</a>
-        </div>
-      </div>
-    </li>
-    <!-- card list item -->
-    <li class="flex-card-listitem">
-      <!-- card module -->
-      <div class="flex-card">
-        <!-- image container -->
-        <div class="flex-card-image">
-          <img src="http://placehold.it/300x200&text=%20" />
-        </div>
-        <!-- content container -->
-        <div class="flex-card-content">
-          <h3 class="flex-card-heading">Fourth</h3>
-          <p>I'm a card and I'm fourth.</p>
-          <a href="#" class="flex-card-button">Button</a>
-        </div>
-      </div>
-    </li>
-  </ul>
-</div>
-<!--card list-->
+      </li>
+    </ul>
+  </div>
+  <!--card list-->
   `,
   styleUrls: ['./hospital.component.scss']
 })

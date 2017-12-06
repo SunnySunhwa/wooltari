@@ -1,4 +1,5 @@
 import { HospitalComponent } from './dev/hospital/hospital.component';
+import { DashboardComponent } from './dev/dashboard/dashboard.component';
 import {
   PetComponent,
   PetRegisterComponent
@@ -8,11 +9,13 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   { path: '', component: PetComponent },
-  { path: 'hospital', component: HospitalComponent }
+  { path: 'register', component: PetRegisterComponent },
+  { path: 'hospital', component: HospitalComponent },
+  { path: 'dashboard', component: DashboardComponent }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
