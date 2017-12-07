@@ -15,6 +15,9 @@ import {
 } from './dev/pet/components';
 import { BtnComponent } from './dev/btn/btn.component';
 
+import { SignUpComponent } from './dev/user/sign-up/sign-up.component';
+import { SignInComponent } from './dev/user/sign-in/sign-in.component';
+import { MembershipComponent } from './dev/user/membership/membership.component';
 
 @NgModule({
   declarations: [
@@ -24,16 +27,12 @@ import { BtnComponent } from './dev/btn/btn.component';
     DashboardComponent,
     PetComponent,
     PetRegisterComponent,
-<<<<<<< HEAD
-    SidebarComponent
-=======
     SidebarComponent,
-<<<<<<< HEAD
     BtnComponent,
-=======
-    HospitalComponent,
->>>>>>> 5f91ff52f1c54dba257aec997fc0f39f25928299
->>>>>>> 6669a8d52f8a8a193111f707a1757b589c691cab
+    SignUpComponent,
+    SignInComponent,
+    MembershipComponent,
+    SidebarComponent,
   ],
   imports: [
     BrowserModule,
