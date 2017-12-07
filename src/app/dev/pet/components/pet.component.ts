@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
   template: `
     <app-pet-register></app-pet-register>
   `,
-  styles: []
+  styles: ['']
 })
 export class PetComponent implements OnInit {
 
