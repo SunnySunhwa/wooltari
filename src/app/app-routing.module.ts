@@ -1,8 +1,8 @@
-<<<<<<< HEAD
+
 import { BtnComponent } from './dev/btn/btn.component';
-=======
-import { HospitalComponent } from './dev/hospital/hospital.component';
->>>>>>> 5f91ff52f1c54dba257aec997fc0f39f25928299
+import { SignUpComponent } from './dev/user/sign-up/sign-up.component';
+import { SignInComponent } from './dev/user/sign-in/sign-in.component';
+import { MembershipComponent } from './dev/user/membership/membership.component';
 import { DashboardComponent } from './dev/dashboard/dashboard.component';
 import {
   PetComponent,
@@ -12,15 +12,14 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
+  { path: 'signup', component: SignUpComponent },
+  { path: 'signin', component: SignInComponent },
+  { path: 'membership', component: MembershipComponent },
   { path: '', component: PetComponent },
   { path: 'register', component: PetRegisterComponent },
-<<<<<<< HEAD
   { path: 'dashboard', component: DashboardComponent },
-  { path: 'btn', component: BtnComponent }
-=======
-  { path: 'hospital', component: HospitalComponent },
+  { path: 'btn', component: BtnComponent },
   { path: 'dashboard', component: DashboardComponent }
->>>>>>> 5f91ff52f1c54dba257aec997fc0f39f25928299
 ];
 
 @NgModule({

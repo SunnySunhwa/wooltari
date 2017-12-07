@@ -8,17 +8,16 @@ import { DevComponent } from './dev/dev.component';
 import { UserComponent } from './dev/user/user.component';
 import { DashboardComponent } from './dev/dashboard/dashboard.component';
 import { SidebarComponent } from './dev/dashboard/sidebar.component';
+
 import {
   PetComponent,
   PetRegisterComponent
 } from './dev/pet/components';
-<<<<<<< HEAD
 import { BtnComponent } from './dev/btn/btn.component';
-=======
-import { HospitalComponent } from './dev/hospital/hospital.component';
 
->>>>>>> 5f91ff52f1c54dba257aec997fc0f39f25928299
-
+import { SignUpComponent } from './dev/user/sign-up/sign-up.component';
+import { SignInComponent } from './dev/user/sign-in/sign-in.component';
+import { MembershipComponent } from './dev/user/membership/membership.component';
 
 @NgModule({
   declarations: [
@@ -29,11 +28,11 @@ import { HospitalComponent } from './dev/hospital/hospital.component';
     PetComponent,
     PetRegisterComponent,
     SidebarComponent,
-<<<<<<< HEAD
     BtnComponent,
-=======
-    HospitalComponent,
->>>>>>> 5f91ff52f1c54dba257aec997fc0f39f25928299
+    SignUpComponent,
+    SignInComponent,
+    MembershipComponent,
+    SidebarComponent,
   ],
   imports: [
     BrowserModule,

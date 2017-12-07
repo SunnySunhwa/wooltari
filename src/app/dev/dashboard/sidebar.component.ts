@@ -26,7 +26,7 @@ import { Component, OnInit } from '@angular/core';
     
     <router-outlet></router-outlet>
   `,
-  styleUrls: ['./sidebar.css']
+  styleUrls: ['./sidebar.scss']
 })
 export class SidebarComponent implements OnInit {
 
