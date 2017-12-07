@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
 <h1> 버튼형식 샘플링 </h1>
 <div class="container">
   <div class="btn-sample bg-white">
+    <a href="https://getbootstrap.com/docs/4.0/components/alerts/">go to Documents</a>
     <p>Button Basic</p>
     <button type="button" class="btn btn-radius btn-mint">mint</button>
     <button type="button" class="btn btn-radius btn-orange">orange</button>
