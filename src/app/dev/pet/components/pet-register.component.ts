@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-pet-register',
@@ -18,18 +19,10 @@ import { Component, OnInit } from '@angular/core';
         <div class="elem">
           <h4 class="elem-title">Species</h4>
           <div class="elem-conts">
-            <div class="check-radio">
-              <ul class="list">
-                <li class="list-item">
-                 <input type="radio" class="radio-btn" name="choice" id="species-cat" checked/>
-                 <label for="species-cat" class="label">Cat</label>
-                </li>
-                <li class="list-item">
-                 <input type="radio" class="radio-btn" name="choice" id="species-dog" />
-                 <label for="species-dog" class="label">Dog</label>
-                </li>
-              </ul>
-            </div><!-- //check-radio -->
+            <div class="radio-group species">
+              <input type="radio" id="option-one" name="selector" checked><label for="option-one" >Cat</label>
+              <input type="radio" id="option-two" name="selector"><label for="option-two">Dog</label>
+            </div>
           </div>
         </div><!-- // elem1-->
         <div class="elem">
@@ -65,7 +58,7 @@ import { Component, OnInit } from '@angular/core';
             <h4 class="elem-title">Number</h4>
             <div class="elem-conts">
               <input type="text" placeholder="registration number">
-              <button type="button" class="btn btn-outline-primary">Primary</button>
+              <button type="button" class="btn btn-radius btn-mint">search</button>
             </div>
         </div> <!-- // elem4 -->
       </div><!-- // box-left-->
