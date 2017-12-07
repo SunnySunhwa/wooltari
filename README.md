@@ -11,3 +11,5 @@
 </div>
 
 ```
+- btn 컴포넌트의 버튼 (부트스트랩 기반 커스터마이징) 형식 유지
+- 그외 버튼: https://getbootstrap.com/docs/4.0/getting-started/introduction/
