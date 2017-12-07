@@ -118,7 +118,7 @@ export class HospitalComponent implements OnInit {
   lng: number;
   markers: Marker[];
   ngOnInit() {
-    this.title = '동물병원';
+    this.title = '동물병원 지도';
     this.zoom = 10;
     this.lat = 51.678418;
     this.lng = 7.809007;
