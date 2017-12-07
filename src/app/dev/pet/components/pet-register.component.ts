@@ -143,7 +143,7 @@ import { Component, OnInit } from '@angular/core';
       </div>
   </div> <!-- // box-footer -->
 </div><!-- // container-->`,
-  styleUrls: ['../pet-style.scss']
+  styleUrls: ['./pet-style.scss']
 })
 export class PetRegisterComponent implements OnInit {
 
