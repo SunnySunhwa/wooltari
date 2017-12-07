@@ -1,20 +1,52 @@
-
-@import url(https://fonts.googleapis.com/css?family=Roboto);
-
 /* Color scheme */
 $white: #fff;
-$grey1: #f9fafa;
-$grey2:#DBE5EA;
-$grey3: #bdc3c8;
-$grey4: #7f8c8d;
-$deep: #35495e;
-$dark: #2a3a4b;
-$black: #253341;
+$grey1: #f9fafa !default;
+$grey2:#DBE5EA !default;
+$grey3: #bdc3c8 !default;
+$grey4: #7f8c8d!default;
+$deep: #35495e !default;
+$darky: #2a3a4b !default;
+$black: #253341 !default;
+$orange: #FE7A53 !default;
+$mint: #1aa1a1 !default;
+$mintL: #73bbc0 !default;
+$mintD: #0b575f !default;
 
-$orange: #FE7A53;
-$green: #1aa1a1;
-$greenL: #73bbc0;
-$greenD: #0b575f;
+$custom-colors: () !default;
+$custom-colors: map-merge(( 
+  "grey1" : $grey1,
+  "grey2" : $grey2,
+  "grey3" : $grey3,
+  "grey4" : $grey4,
+  "deep" : $deep,
+  "darky" : $darky,
+  "black" : $black,
+  "orange" : $orange,
+  "mint" : $mint,
+  "mintL" : $mintL,
+  "mintD": $mintD,
+  ), $custom-colors);
+
+
+  $custom-color-interval: 8% !default;
+@each $color,
+$value in $custom-colors {
+  .btn-#{$color} {
+    @include button-variant($value, $value);
+  }
+}
+
+@each $color,
+$value in $custom-colors {
+  .btn-outline-#{$color} {
+    @if $color=="light" {
+      @include button-outline-variant($value, $gray-900);
+    }
+    @else {
+      @include button-outline-variant($value, $white);
+    }
+  }
+}
 
 
 body {
@@ -34,6 +66,7 @@ h1 {
   margin: 0 auto;
   padding: 0 5em 3.125em 10em;
 }
+<<<<<<< HEAD
 
 /* Button */
 
@@ -578,3 +611,5 @@ button {
     background: $orange;
   }
 }
+=======
+>>>>>>> pet

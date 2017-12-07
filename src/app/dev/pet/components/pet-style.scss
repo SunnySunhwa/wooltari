@@ -1,4 +1,4 @@
-
+/*
 .row {
   width: 100%;
   margin: 2em auto;
@@ -77,19 +77,19 @@
       transition: border .25s linear;
     }
     &.gradationA-1 label {
-      background: darken($green, 25%);
+      background: darken($mint, 25%);
     }
     &.gradationA-2 label {
-      background: darken($green, 13%);
+      background: darken($mint, 13%);
     }
     &.gradationA-3 label {
-      background: $green;
+      background: $mint;
     }
     &.gradationA-4 label {
-      background: lighten($green, 13%);
+      background: lighten($mint, 13%);
     }
     &.gradationA-5 label {
-      background: lighten($greenL, 25%);
+      background: lighten($mintL, 25%);
     }
   }
   
@@ -100,3 +100,4 @@
   text-transform: capitalize;
   font-weight: bold;
 }
+*/
