@@ -24,7 +24,6 @@ import { BtnComponent } from './dev/btn/btn.component';
     DashboardComponent,
     PetComponent,
     PetRegisterComponent,
-    HospitalComponent
   ],
   imports: [
     BrowserModule,
