@@ -10,7 +10,6 @@ import {
 } from './dev/pet/components';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-
 const routes: Routes = [
   { path: 'signup', component: SignUpComponent },
   { path: 'signin', component: SignInComponent },

@@ -1,5 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+//import { Pet } from '../models/pet';
+
+class Pet {
+  constructor(
+    public count: number,
+    public next: null,
+    public privious: null,
+    
+  ) { }
+}
 
 @Component({
   selector: 'app-pet-register',
@@ -58,7 +68,7 @@ import { HttpClient } from '@angular/common/http';
             <h4 class="elem-title">Number</h4>
             <div class="elem-conts">
               <input type="text" placeholder="registration number">
-              <button type="button" class="btn btn-radius btn-mint">search</button>
+              <button type="button" class="btn btn-small btn-radius btn-mint">search</button>
             </div>
         </div> <!-- // elem4 -->
       </div><!-- // box-left-->
@@ -131,18 +141,27 @@ import { HttpClient } from '@angular/common/http';
   </div> <!--// box-container-->
   <div class="row box-footer">
     <div class="btn-set-wrapper">
-      <button class="btn btn-type1 bg-orange">Submit</button>
-      <button class="btn btn-type1 bg-grey">Cancel</button>
-      </div>
+      <button type="button" class="btn btn-radius btn-footer btn-orange">Submit</button>
+      <button type="button" class="btn btn-radius btn-footer btn-grey4">Cancel</button>
+    </div>
+    {{pets | json}}
   </div> <!-- // box-footer -->
 </div><!-- // container-->`,
   styleUrls: ['./pet-style.scss']
 })
 export class PetRegisterComponent implements OnInit {
+  url = 'http://wooltari-test-server-dev.ap-northeast-2.elasticbeanstalk.com/profile/2/pets/';
+  pets: Pet[];
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
+    this.http.get<Pet[]>(this.url, { observe: 'response' })
+      .subscribe(res => {
+        console.log(res);
+        console.log(res.headers);
+        console.log(res.status); 
+        this.pets = res.body;  
+      });
+    }
   }
-
-}

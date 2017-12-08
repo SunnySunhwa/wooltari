@@ -41,6 +41,7 @@
       font-size: 1rem;
       width: 25%;
       color: $mint;
+      padding-top: .3rem;
       
     }
    }
@@ -51,10 +52,22 @@
   font-size: .9rem;
 }
 
-.btn {
+.btn-footer {
+  margin: 1.5rem;
+  padding: 0.5rem 2rem;
+} 
+.btn-small {
   line-height: 1;
   font-size: .8rem;
+  &.btn-radius {
+    border-radius: 5px;
+  }
 }
+
+.btn-set-wrapper {
+  margin: auto;
+}
+
 .box-footer {
 }
 
