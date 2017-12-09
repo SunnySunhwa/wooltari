@@ -1,15 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-//import { Pet } from '../models/pet';
+import { Inject } from '@angular/core'
+import { Pet } from '../models/pet';
 
-class Pet {
-  constructor(
-    public count: number,
-    public next: null,
-    public privious: null,
-    
-  ) { }
-}
 
 @Component({
   selector: 'app-pet-register',
@@ -153,8 +146,7 @@ export class PetRegisterComponent implements OnInit {
   url = 'http://wooltari-test-server-dev.ap-northeast-2.elasticbeanstalk.com/profile/2/pets/';
   pets: Pet[];
 
-  constructor(private http: HttpClient) { }
-
+  constructor(@Inject(HttpClient) public http: HttpClient) { }
   ngOnInit(): void {
     this.http.get<Pet[]>(this.url, { observe: 'response' })
       .subscribe(res => {
