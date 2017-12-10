@@ -1,4 +1,5 @@
-/*
+@import '../../../../style/base.scss';
+
 .row {
   width: 100%;
   margin: 2em auto;
@@ -32,16 +33,28 @@
 
   .elem {
     display: flex;
-    padding: .5em;
+    padding: .25em;
     width: 100%;
     
     .elem-title {
+      display: inline-block;
+      font-size: 1rem;
       width: 25%;
-      color: $green;
+      color: $mint;
+      
     }
    }
 
+.species {
+  padding: 0;
+  margin: 0;
+  font-size: .9rem;
+}
 
+.btn {
+  line-height: 1;
+  font-size: .8rem;
+}
 .box-footer {
 }
 
@@ -100,4 +113,3 @@
   text-transform: capitalize;
   font-weight: bold;
 }
-*/
