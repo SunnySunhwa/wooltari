@@ -12,7 +12,7 @@ interface Marker {
   template: `
  <div class="hospital-header">
     <h2>{{ title }}</h2>
- </div> 
+ </div>
   <div class="hospital-map-container">
     <agm-map
             [latitude]="lat"
