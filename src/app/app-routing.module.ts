@@ -1,3 +1,4 @@
+import { HospitalComponent } from './dev/hospital/hospital.component';
 
 import { BtnComponent } from './dev/btn/btn.component';
 import { SignUpComponent } from './dev/user/sign-up/sign-up.component';
@@ -19,7 +20,8 @@ const routes: Routes = [
   { path: 'register', component: PetRegisterComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'btn', component: BtnComponent },
-  { path: 'dashboard', component: DashboardComponent }
+  { path: 'dashboard', component: DashboardComponent },
+  { path: 'hospital', component: HospitalComponent}
 ];
 
 @NgModule({

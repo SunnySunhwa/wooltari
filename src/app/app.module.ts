@@ -1,8 +1,10 @@
+import { HospitalComponent } from './dev/hospital/hospital.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AgmCoreModule } from '@agm/core';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
 import { DevComponent } from './dev/dev.component';
 import { UserComponent } from './dev/user/user.component';
@@ -32,6 +34,7 @@ import { MembershipComponent } from './dev/user/membership/membership.component'
     SignInComponent,
     MembershipComponent,
     SidebarComponent,
+    HospitalComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +42,8 @@ import { MembershipComponent } from './dev/user/membership/membership.component'
     AppRoutingModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyBRWdV7hVNkFodjr_PouORs8pjwkCcOF0Y'
-    })
+    }),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
