@@ -15,17 +15,17 @@ import { Component, OnInit } from '@angular/core';
         </div>
       </div>
 
-      <div class="row-user box-container">
+      <div class="row box-container">
         <div class="box-center">
           <div class="right-side">
-            <div class="elem-user">
+            <div class="elem">
               <div class="elem-conts">
                 <span class="sign-up-link"><a href="#">Sign Up</a></span>
                 <span class="sign-in-link"><a href="#">Sign In</a></span>
               </div>
             </div>
           </div>
-          <div class="elem-user">
+          <div class="elem">
             <h4 class="elem-title">User Email</h4>
             <div class="elem-conts">
               <div class="input-email">
@@ -35,7 +35,7 @@ import { Component, OnInit } from '@angular/core';
             </div>
           </div>
 
-          <div class="elem-user">
+          <div class="elem">
             <h4 class="elem-title">Password</h4>
             <div class="input-password">
               <input type="password" name="userpassword" id="user-password" class="" placeholder="Enter Password">
@@ -43,7 +43,7 @@ import { Component, OnInit } from '@angular/core';
             </div>
           </div>
 
-          <div class="elem-user">
+          <div class="elem">
             <h4 class="elem-title">Comfirm Password</h4>
             <div class="confirm-password">
               <input type="password" name="checkpassword" id="check-password" class="" placeholder="Confirm Password">
@@ -55,13 +55,13 @@ import { Component, OnInit } from '@angular/core';
 
       <div class="row box-footer">
         <div class="btn-set-wrapper">
-          <button class="btn btn-type1 bg-main">Submit</button>
+          <button class="btn btn-type1 bg-orange">Submit</button>
           <button class="btn btn-type1 bg-grey">Cancel</button>
         </div>
       </div> <!-- // box-footer -->
     </div>
   `,
-  styles: []
+  styleUrls: ['../user-style.scss']
 })
 export class SignUpComponent implements OnInit {
 

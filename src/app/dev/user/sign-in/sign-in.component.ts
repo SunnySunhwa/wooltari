@@ -13,10 +13,10 @@ import { Component, OnInit } from '@angular/core';
         </div>
       </div>
 
-      <div class="row-user box-container">
+      <div class="row box-container">
         <div class="box-center">
           <div class="right-side">
-            <div class="elem-user">
+            <div class="elem">
               <div class="elem-conts">
                 <span class="sign-up-link"><a href="#">Sign Up</a></span>
                 <span class="sign-in-link"><a href="#">Sign In</a></span>
@@ -24,7 +24,7 @@ import { Component, OnInit } from '@angular/core';
             </div>
           </div>
 
-          <div class="elem-user">
+          <div class="elem">
             <div class="elem-conts">
               <div class="input-email">
                 <input type="email" name="useremail" id="user-email" class="input-form" placeholder="iLovePets@example.com">
@@ -32,7 +32,7 @@ import { Component, OnInit } from '@angular/core';
             </div>
           </div>
 
-          <div class="elem-user">
+          <div class="elem">
             <div class="elem-conts">
               <div class="input-password">
                 <input type="password" name="userpassword" id="user-password" class="input-form" placeholder="Enter Password">
@@ -40,7 +40,7 @@ import { Component, OnInit } from '@angular/core';
             </div>
           </div>
 
-          <div class="elem-user">
+          <div class="elem">
             <div class="remember-me">
               <input type="checkbox" class="remember-me-checkbox">
               <span>Remeber me</span>
@@ -60,7 +60,7 @@ import { Component, OnInit } from '@angular/core';
       </div>
     </div>
   `,
-  styles: []
+  styleUrls: ['../user-style.scss']
 })
 export class SignInComponent implements OnInit {
 

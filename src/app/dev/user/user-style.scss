@@ -1,0 +1,59 @@
+@import '../../../style/base';
+
+.right-side {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+}
+
+.row {
+  width: 75%;
+  margin: 2em auto;
+}
+
+.profile {
+  width: 50%;
+  margin: auto;
+  text-align: center;
+}
+
+.elem {
+    display: flex;
+    padding: .25em;
+    width: 100%;
+    .elem-title {
+      display: inline-block;
+      font-size: 1rem;
+      width: 25%;
+      color: $mint;
+    }
+}
+
+.box-container {
+  display: flex;
+  position:relative;
+  font-size: .8rem;
+  //background: $white;
+  border-radius: 20px;
+  color: $black;
+  background: white;
+}
+
+.box-center {
+  width: 100%;
+  padding: 2em;
+}
+
+.input-form {
+  width: 100%;
+}
+
+.validation {
+  padding: 0em;
+  color: red;
+}
+
+.btn {
+  line-height: 1;
+  font-size: .8rem;
+}
