@@ -61,7 +61,7 @@ import { PasswordValidator } from './password-validator';
                     placeholder="Enter Password"
                   >
                   <em *ngIf="password.errors?.required && password.touched" class="">
-                    password를 입력하세요!
+                    Enter your password!
                   </em>
                 </div>
               </div>
@@ -77,10 +77,10 @@ import { PasswordValidator } from './password-validator';
                     placeholder="Confirm Password"
                   >
                   <em *ngIf="confirmPassword.errors?.required && confirmPassword.touched" class="">
-                    password를 입력하세요!
+                    Enter your password!
                   </em>
                   <em *ngIf="passwordGroup.errors?.match && confirmPassword.touched && !confirmPassword.error?.required" class="">
-                    password가 일치하지 않습니다!
+                    Match your password!
                 </em>
                 </div>
               </div>
