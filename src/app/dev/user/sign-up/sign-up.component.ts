@@ -1,6 +1,9 @@
+import { environment } from './../../../../environments/environment';
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, Inject } from '@angular/core';
 import { FormControl, FormGroup, FormArray, FormBuilder, Validators } from '@angular/forms';
-import { PasswordValidator } from './password-validator';
+import { Router } from '@angular/router';
+import { PasswordValidator } from '../password-validator';
 
 @Component({
   selector: 'app-sign-up',
@@ -81,7 +84,7 @@ import { PasswordValidator } from './password-validator';
                   </em>
                   <em *ngIf="passwordGroup.errors?.match && confirmPassword.touched && !confirmPassword.error?.required" class="">
                     Match your password!
-                </em>
+                  </em>
                 </div>
               </div>
             </div>
@@ -96,15 +99,20 @@ import { PasswordValidator } from './password-validator';
         </div> <!-- // box-footer -->
       </form>
     </div>
-    <pre>{{ userForm.value | json }}</pre>
+    {{ userForm.value | json }}
   `,
   styleUrls: ['../user-style.scss']
 })
 export class SignUpComponent implements OnInit {
+  // 서비스로 빼야 할 것 같은데 일단은 이렇게 작업해두자
   userForm: FormGroup;
+  signupForm: any;
   regexr = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/;
+  appUrl = environment.appUrl;
 
-  constructor(@Inject(FormBuilder) private fb: FormBuilder) { }
+  constructor( @Inject(FormBuilder) private fb: FormBuilder,
+              @Inject(HttpClient) private http: HttpClient,
+              @Inject(Router) private router: Router) { }
 
   ngOnInit() {
     this.userForm = this.fb.group({
@@ -136,8 +144,25 @@ export class SignUpComponent implements OnInit {
     return this.userForm.get('passwordGroup.confirmPassword');
   }
 
+
   onSubmit() {
-    // 현재 그냥 리셋이지만 나중에 서버와 연결하여 json의 payload로 보내야 할 처리과정을 써야함
-    this.userForm.reset();
+    this.signupForm = {
+      nickname: this.userName.value,
+      email: this.userEmail.value,
+      password1: this.password.value,
+      password2: this.confirmPassword.value
+    };
+    console.log(this.signupForm);
+    if (this.userForm.status === 'VALID') {
+      this.http.post(`${this.appUrl}/auth/signup/`, this.signupForm)
+        .subscribe(res => {
+          console.log(res);
+          console.log('회원가입 성공!');
+          this.router.navigate(['signin']);
+          return false;
+        });
+    } else {
+      console.log('invalid token');
+    }
   }
 }
