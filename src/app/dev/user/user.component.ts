@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
       user works!
     </p>
   `,
-  styles: []
+  styles: ['']
 })
 export class UserComponent implements OnInit {
 
