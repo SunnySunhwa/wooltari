@@ -20,6 +20,7 @@ import { BtnComponent } from './dev/btn/btn.component';
 import { SignUpComponent } from './dev/user/sign-up/sign-up.component';
 import { SignInComponent } from './dev/user/sign-in/sign-in.component';
 import { MembershipComponent } from './dev/user/membership/membership.component';
+import { PetStateComponent } from './dev/pet-state/pet-state.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { MembershipComponent } from './dev/user/membership/membership.component'
     SignInComponent,
     MembershipComponent,
     SidebarComponent,
-    HospitalComponent
+    HospitalComponent,
+    PetStateComponent
   ],
   imports: [
     BrowserModule,
