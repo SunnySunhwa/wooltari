@@ -22,7 +22,6 @@ import { SignInComponent } from './dev/user/sign-in/sign-in.component';
 import { MembershipComponent } from './dev/user/membership/membership.component';
 
 import { AuthService } from './dev/services/auth.service';
-import { JwtHelper } from 'angular2-jwt';
 
 @NgModule({
   declarations: [
@@ -52,7 +51,6 @@ import { JwtHelper } from 'angular2-jwt';
   ],
   providers: [
     AuthService,
-    JwtHelper
   ],
   bootstrap: [AppComponent]
 })

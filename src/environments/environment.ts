@@ -5,5 +5,5 @@
 
 export const environment = {
   production: false,
-  appUrl: 'http://wooltari-test-server-dev.ap-northeast-2.elasticbeanstalk.com'
+  apiUrl: 'http://wooltari-test-server-dev.ap-northeast-2.elasticbeanstalk.com'
 };

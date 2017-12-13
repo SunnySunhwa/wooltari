@@ -107,7 +107,7 @@ export class SignUpComponent implements OnInit {
   // 서비스로 빼야 할 것 같은데 일단은 이렇게 작업해두자
   userForm: FormGroup;
   regexr = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/;
-  appUrl = environment.appUrl;
+  appUrl = environment.apiUrl;
 
   constructor(
     @Inject(FormBuilder) private fb: FormBuilder,

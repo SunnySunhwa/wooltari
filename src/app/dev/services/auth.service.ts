@@ -1,38 +1,42 @@
 import { Injectable, Inject } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
-import { JwtHelper } from 'angular2-jwt';
+import { environment } from '../../../environments/environment';
 
 import 'rxjs/add/observable/of';
 import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/shareReplay';
 
-import { environment } from '../../../environments/environment';
-
-interface User {
-  email: string;
-  password: string;
+class SuccessLoginUser {
+  constructor(
+    public token: string,
+    public user: {
+      data_joined: string,
+      email: string,
+      is_active: boolean,
+      pk: number,
+      user_type: string
+    }
+  ) { }
 }
-interface Token {
-  token: string;
+
+class TryLoginUser {
+  constructor(
+    public email: string,
+    public password: string
+  ) { }
 }
 
 @Injectable()
 export class AuthService {
-  appUrl = environment.appUrl;
-  TOKEN_NAME = 'jwt_token';
-
-  constructor(
-    @Inject(HttpClient) private http: HttpClient,
-    @Inject(JwtHelper) private jwtHelper: JwtHelper) {
-    // console.log('[appUrl] ', this.appUrl);
+  appUrl = environment.apiUrl;
+  TOKEN_NAME = 'token';
+  constructor( @Inject(HttpClient) private http: HttpClient) {
+    console.log('[appUrl] ', this.appUrl);
   }
-
-  signin(loginform): Observable<Token> {
-    // const headers = new HttpHeaders ('')
-    console.log(`${this.appUrl}`);
-    return this.http.post<Token>(`${this.appUrl}/auth/login`, loginform, {})
-      .do((res) => {
+  signin(loginForm: TryLoginUser): Observable<SuccessLoginUser> {
+    return this.http.post<SuccessLoginUser>(`${this.appUrl}/auth/login/`, loginForm)
+      .do(res => {
         this.setToken(res.token);
         console.log(res);
       })
