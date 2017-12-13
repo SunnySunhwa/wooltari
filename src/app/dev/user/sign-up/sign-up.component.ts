@@ -108,11 +108,12 @@ export class SignUpComponent implements OnInit {
   userForm: FormGroup;
   regexr = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/;
   appUrl = environment.appUrl;
-  message: string;
 
-  constructor( @Inject(FormBuilder) private fb: FormBuilder,
-              @Inject(HttpClient) private http: HttpClient,
-              @Inject(Router) private router: Router) { }
+  constructor(
+    @Inject(FormBuilder) private fb: FormBuilder,
+    @Inject(HttpClient) private http: HttpClient,
+    @Inject(Router) private router: Router
+  ) { }
 
   ngOnInit() {
     this.userForm = this.fb.group({

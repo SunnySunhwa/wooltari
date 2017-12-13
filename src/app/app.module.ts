@@ -1,4 +1,3 @@
-import { HospitalComponent } from './dev/hospital/hospital.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AgmCoreModule } from '@agm/core';
@@ -7,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
+import { HospitalComponent } from './dev/hospital/hospital.component';
 import { DevComponent } from './dev/dev.component';
 import { UserComponent } from './dev/user/user.component';
 import { DashboardComponent } from './dev/dashboard/dashboard.component';
@@ -20,6 +20,9 @@ import { BtnComponent } from './dev/btn/btn.component';
 import { SignUpComponent } from './dev/user/sign-up/sign-up.component';
 import { SignInComponent } from './dev/user/sign-in/sign-in.component';
 import { MembershipComponent } from './dev/user/membership/membership.component';
+
+import { AuthService } from './dev/services/auth.service';
+import { JwtHelper } from 'angular2-jwt';
 
 @NgModule({
   declarations: [
@@ -47,7 +50,10 @@ import { MembershipComponent } from './dev/user/membership/membership.component'
     HttpClientModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    AuthService,
+    JwtHelper
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -3,6 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, Inject } from '@angular/core';
 import { FormControl, FormGroup, FormArray, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
+import { HttpErrorResponse } from '@angular/common/http/src/response';
 
 interface Token {
   token: string;
@@ -78,6 +80,7 @@ interface Token {
             <button type="submit" class="btn btn-type1 bg-orange" [disabled]="userForm.invalid">Submit</button>
             <button class="btn btn-type1 bg-grey">Cancel</button>
           </div>
+          <div *ngIf="message" class="alert alert-danger">{{ message }}</div>
         </div>
       </form>
     </div>
@@ -87,10 +90,14 @@ interface Token {
 export class SignInComponent implements OnInit {
   userForm: FormGroup;
   appUrl = environment.appUrl;
+  message: string;
 
-  constructor( @Inject(FormBuilder) private fb: FormBuilder,
-              @Inject(HttpClient) private http: HttpClient,
-              @Inject(Router) private router: Router) { }
+  constructor(
+    @Inject(FormBuilder) private fb: FormBuilder,
+    @Inject(HttpClient) private http: HttpClient,
+    @Inject(Router) private router: Router,
+    @Inject(AuthService) private auth: AuthService
+  ) { }
 
   ngOnInit() {
     this.userForm = this.fb.group({
@@ -110,13 +117,19 @@ export class SignInComponent implements OnInit {
       email: this.userEmail.value,
       password: this.password.value
     };
-      this.http.post(`${this.appUrl}/auth/login/`, loginForm)
-        // request id, password token == token
-        .subscribe(res => {
-          console.log(res);
-          console.log('로그인 성공!');
-          this.router.navigate(['']);
-          return false;
-        });
+    console.log('[payload]', loginForm);
+    this.auth.signin(loginForm)
+      .subscribe(
+        () => this.router.navigate(['dashboard']),
+        (err: HttpErrorResponse) => {
+          if (err.error instanceof Error) {
+            // 클라이언트 또는 네트워크 에러
+            console.log(`Client-side error : ${err.error.message}`);
+          } else {
+            // 백엔드가 실패 상태 코드 응답
+            console.log(`Server-side error : ${err.status}`);
+          }
+        }
+      );
   }
 }
