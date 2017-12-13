@@ -41,7 +41,6 @@ import { MembershipComponent } from './dev/user/membership/membership.component'
       apiKey: 'AIzaSyBRWdV7hVNkFodjr_PouORs8pjwkCcOF0Y'
     })
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -71,12 +71,13 @@ import { Component, OnInit } from '@angular/core';
       <h2>Medical Info</h2>
     </div>
   </div>
+  <pre>{{ user | json}}</pre>
+
+  
   `,
   styleUrls: ['./dashboard.scss']
 })
 export class DashboardComponent implements OnInit {
-
-  constructor() { }
 
   ngOnInit() {
   }

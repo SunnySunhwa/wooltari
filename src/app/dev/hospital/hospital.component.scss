@@ -56,3 +56,14 @@ ul{
   text-decoration: none;
   color: white;
 }
+
+/*scss 추가*/
+
+.flexbox ul {
+  li{
+    display:flex;
+    background-color: #aaa;
+    padding: 1em;
+    border-radius:4px;
+  }
+}
