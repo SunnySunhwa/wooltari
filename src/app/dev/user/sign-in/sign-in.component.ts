@@ -36,8 +36,8 @@ interface Token {
             <div class="elem">
               <div class="elem-conts">
                 <div class="input-email">
-                  <input type="email" name="useremail" class="form-control" formControlName="email" placeholder="iLovePets@example.com">
-                  <em *ngIf="email.errors?.required && email.touched" class="">
+                  <input type="email" name="useremail" class="form-control" formControlName="userEmail" placeholder="iLovePets@example.com">
+                  <em *ngIf="userEmail.errors?.required && userEmail.touched" class="">
                     Enter your email!
                   </em>
                 </div>
@@ -81,7 +81,6 @@ interface Token {
         </div>
       </form>
     </div>
-    <div class="elem">{{ userForm.value | json }}</div>
   `,
   styleUrls: ['../user-style.scss']
 })
@@ -95,20 +94,24 @@ export class SignInComponent implements OnInit {
 
   ngOnInit() {
     this.userForm = this.fb.group({
-      email: ['', Validators.required],
+      userEmail: ['', Validators.required],
       password: ['', Validators.required]
     });
   }
-  get email() {
-    return this.userForm.get('email');
+  get userEmail() {
+    return this.userForm.get('userEmail');
   }
   get password() {
     return this.userForm.get('password');
   }
 
   onSubmit() {
+    const loginForm = {
+      email: this.userEmail.value,
+      password: this.password.value
+    };
     if (this.userForm.status === 'VALID') {
-      this.http.post(`${this.appUrl}/auth/login/`, this.userForm.value)
+      this.http.post(`${this.appUrl}/auth/login/`, loginForm)
         // request id, password token == token
         .subscribe(res => {
           console.log(res);

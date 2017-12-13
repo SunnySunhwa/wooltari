@@ -106,7 +106,6 @@ import { PasswordValidator } from '../password-validator';
 export class SignUpComponent implements OnInit {
   // 서비스로 빼야 할 것 같은데 일단은 이렇게 작업해두자
   userForm: FormGroup;
-  signupForm: any;
   regexr = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/;
   appUrl = environment.appUrl;
 
@@ -146,15 +145,14 @@ export class SignUpComponent implements OnInit {
 
 
   onSubmit() {
-    this.signupForm = {
+    const signupForm = {
       nickname: this.userName.value,
       email: this.userEmail.value,
       password1: this.password.value,
       password2: this.confirmPassword.value
     };
-    console.log(this.signupForm);
     if (this.userForm.status === 'VALID') {
-      this.http.post(`${this.appUrl}/auth/signup/`, this.signupForm)
+      this.http.post(`${this.appUrl}/auth/signup/`, signupForm)
         .subscribe(res => {
           console.log(res);
           console.log('회원가입 성공!');
