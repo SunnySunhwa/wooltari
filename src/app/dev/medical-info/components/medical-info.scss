@@ -1,0 +1,189 @@
+@import '../../../../style/base.scss';
+@import '../../../../style/card.scss';
+
+agm-map { width:100%; height:300px; }
+/*.hospital-header{height:70px; width:108%;  color:#fff;
+line-height:70px;}*/
+
+/*.hospital-map-container{}*/
+.hospital-header{height:100px; color:#fff;}
+.hospital-header h2{text-align: center;}
+body, p, ul, h3 {
+  padding:0;
+  margin:0;
+}
+ul{
+  list-style-type: none;
+  padding: 0;
+}
+
+/* Put behind .flexbox for Feature detection with Modernizr */
+/* .flexbox {    
+}*/
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  width: 90%;
+  max-width: 70em;
+  margin: 0 auto;
+  padding: 0 5em 3.125em 10em;
+}
+
+// .flexbox {
+//   width: 100%;
+// }
+
+// .flexbox ul {
+//   display: flex;
+//   flex-wrap: wrap;
+//   justify-content: center;
+// }
+
+// .flexbox ul .flex-card-listitem {
+//   padding: 0 30px;
+//   margin-bottom: 50px;
+//   width: 300px;  
+// }
+
+// .flexbox ul .flex-card-listitem .flex-card {
+//   display: flex;
+//   flex-wrap: wrap;
+//   padding: 15px 15px 10px 15px;
+//   background-color: #fff;
+//   box-shadow: 5px 5px 10px #000808;
+//   transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+//   border-width:0 0 8px 0;
+//   border-color: #00bd9c;
+//   border-style: solid;
+//   border-radius: 4px;
+// }
+
+
+// .flexbox ul .flex-card-listitem .flex-card .flex-card-image {
+//   width:100%;
+//   height:130px;
+//   background-color: #ccc;
+//   border-radius:4px;
+// }
+// .flexbox ul .flex-card-listitem .flex-card .flex-card-image img{
+//   border-radius:4px;
+//   box-shadow:5px 5px 2px -3px rgba(0,0,0,0.5);
+//   // border:3px solid #00bd9c;
+// }
+// /*medical card*/
+// .flex-card-list .add-listitem .flex-card{
+//   height:373px;
+// }
+// .flex-card-content{
+//   width:100%;
+// }
+// .flex-card-content ul.list-in-card{
+//   margin:10px 0;
+//   width:100%;
+// }
+// .flex-card-content ul.flex-medical-list {
+//   height: 150px;
+//   overflow: hidden;
+// }
+// .flex-card-content ul.flex-medical-list li{
+//   width: 100%;
+// }
+// .flex-card-content ul.flex-medical-list li .list-title {
+//   font-weight:bold;
+//   font-size:14px;
+// }
+// .flex-card-content ul.flex-medical-list li .list-content {
+//   font-size:13px;
+// }
+// .flex-card-content ul.flex-medical-list li .list-content.overflow-scroll{
+//   text-overflow:ellipsis;
+//   white-space:nowrap;
+//   text-overflow:hidden;
+// }
+// .flex-card-content .btns-in-card {
+//   text-align:center;
+// }
+.new-card-guide{
+  margin:0 auto;
+  padding-top:110px;
+}
+.icon-new-add{
+  display:block;
+  margin:0 auto;
+  border:0;
+  background-color:#fff;
+}
+.icon-new-add img{
+  width:64px;
+  height:64px;
+}
+.text-new-add {
+  display:block;
+  margin-top: 6px;
+}
+
+/*card enroll*/
+.enroll-list .flex-card-content ul.flex-medical-list{
+  height: auto;
+}
+.enroll-list ul .flex-card-listitem{
+  padding:0;
+  width:300px;
+}
+
+.enroll-list ul .flex-card-listitem .flex-card .flex-card-image {
+  height:180px;
+}
+
+textarea{
+  vertical-align: top;
+  resize:none;
+}
+
+
+// .flexbox .flex-card-list {
+//   display:flex;
+//   flex-wrap:wrap;
+//   justify-content: center;
+// }
+
+// .flexbox .flex-card-listitem {
+//   display:flex;
+//   background-color: #fff;
+//   padding: 1em;
+//   border-radius: 8px;
+// }
+
+// .flexbox .flex-card {
+//   // display:flex;
+//   // flex-direction:column;
+//   flex-wrap: wrap;
+//   padding: 10px;
+//   box-shadow: 0 5px 15px rgba(112,128,175,0.2);
+// }
+
+// /* common to flex and non-flex */
+// .flex-card-list li {
+//   width:300px;
+//   margin: 1em;
+// }
+
+// .flexbox .flex-card-content {
+//   display:flex;
+//   flex:1 0 auto; /* We have to add a basis for IE10/11 */
+//   flex-direction:column;
+// }
+
+// .flexbox .flex-card-content p {
+//   flex:1 0 auto; /* We have to add a basis for IE10/11 */
+// }
+
+// .flex-card-button {
+//   background-color: #00aeef;
+//   padding: 1em;
+//   text-align:center;
+//   text-decoration: none;
+//   color: white;
+// }

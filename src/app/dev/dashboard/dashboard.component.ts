@@ -67,10 +67,13 @@ import { Component, OnInit } from '@angular/core';
       <h2>Vaccination</h2>
     </div>
 
-    <div class="summary-view pet-medical-info">
+    <div class="summary-view">
       <h2>Medical Info</h2>
     </div>
   </div>
+  <pre>{{ user | json}}</pre>
+
+  
   `,
   styleUrls: ['./dashboard.scss']
 })

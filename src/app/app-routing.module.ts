@@ -5,6 +5,7 @@ import { SignUpComponent } from './dev/user/sign-up/sign-up.component';
 import { SignInComponent } from './dev/user/sign-in/sign-in.component';
 import { MembershipComponent } from './dev/user/membership/membership.component';
 import { DashboardComponent } from './dev/dashboard/dashboard.component';
+import { MedicalInfoComponent } from './dev/medical-info/components/medical-info.component';
 import {
   PetComponent,
   PetRegisterComponent
@@ -21,7 +22,8 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
   { path: 'btn', component: BtnComponent },
   { path: 'dashboard', component: DashboardComponent },
-  { path: 'hospital', component: HospitalComponent}
+  { path: 'hospital', component: HospitalComponent},
+  { path: 'medical', component: MedicalInfoComponent}
 ];
 
 @NgModule({

@@ -117,7 +117,7 @@ export class HospitalComponent implements OnInit {
   cardLists: any[];
   constructor(@Inject(HttpClient) public http: HttpClient) {}
   ngOnInit() {
-  
+
     this.title = '동물병원 지도';
     this.zoom = 10;
     this.lat = 51.678418;
@@ -208,6 +208,7 @@ export class HospitalComponent implements OnInit {
   // https://stackoverflow.com/questions/32062849/modify-my-custom-marker-image-size-for-my-google-map
   // https://github.com/angular-ui/angular-google-maps/issues/436#event-124520459
   // https://github.com/SebastianM/angular-google-maps/issues/517
+}
 
 /*
 app.get('/', (req, res) => res.json('Hello World!'));
@@ -254,4 +255,3 @@ app.delete('/todos/id/:id', (req, res) => {
 });
 
  */
-}
