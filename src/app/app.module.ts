@@ -21,6 +21,7 @@ import { SignUpComponent } from './dev/user/sign-up/sign-up.component';
 import { SignInComponent } from './dev/user/sign-in/sign-in.component';
 import { MembershipComponent } from './dev/user/membership/membership.component';
 import { PetStateComponent } from './dev/pet-state/pet-state.component';
+import { MedicalInfoComponent } from './dev/medical-info/components/medical-info.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { PetStateComponent } from './dev/pet-state/pet-state.component';
     MembershipComponent,
     SidebarComponent,
     HospitalComponent,
-    PetStateComponent
+    PetStateComponent,
+    MedicalInfoComponent
   ],
   imports: [
     BrowserModule,
@@ -49,7 +51,6 @@ import { PetStateComponent } from './dev/pet-state/pet-state.component';
     HttpClientModule,
     ReactiveFormsModule
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
