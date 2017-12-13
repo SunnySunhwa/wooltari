@@ -1,4 +1,3 @@
-import { environment } from './../../../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, Inject } from '@angular/core';
 import { FormControl, FormGroup, FormArray, FormBuilder, Validators } from '@angular/forms';
@@ -89,7 +88,6 @@ interface Token {
 })
 export class SignInComponent implements OnInit {
   userForm: FormGroup;
-  appUrl = environment.appUrl;
   message: string;
 
   constructor(
