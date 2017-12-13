@@ -29,7 +29,8 @@ export class AuthService {
   }
 
   signin(loginform): Observable<Token> {
-    const headers = new HttpHeaders ('')
+    // const headers = new HttpHeaders ('')
+    console.log(`${this.appUrl}`);
     return this.http.post<Token>(`${this.appUrl}/auth/login`, loginform, {})
       .do((res) => {
         this.setToken(res.token);
