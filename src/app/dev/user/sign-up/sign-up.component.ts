@@ -10,7 +10,7 @@ import { PasswordValidator } from '../password-validator';
   template: `
     <h1>Sign up</h1>
     <div class="container">
-      <form [formGroup]="userForm" (ngSubmit)="onSubmit()" novalidate>
+      <form [formGroup]="userForm" (ngSubmit)="signup()" novalidate>
 
         <div class="row profile">
           <!-- 유저네임 입력창 -->
@@ -108,6 +108,7 @@ export class SignUpComponent implements OnInit {
   userForm: FormGroup;
   regexr = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/;
   appUrl = environment.appUrl;
+  message: string;
 
   constructor( @Inject(FormBuilder) private fb: FormBuilder,
               @Inject(HttpClient) private http: HttpClient,
@@ -144,23 +145,19 @@ export class SignUpComponent implements OnInit {
   }
 
 
-  onSubmit() {
+  singup() {
     const signupForm = {
       nickname: this.userName.value,
       email: this.userEmail.value,
       password1: this.password.value,
       password2: this.confirmPassword.value
     };
-    if (this.userForm.status === 'VALID') {
+    console.log(`[payload] ${signupForm}`);
       this.http.post(`${this.appUrl}/auth/signup/`, signupForm)
         .subscribe(res => {
           console.log(res);
           console.log('회원가입 성공!');
           this.router.navigate(['signin']);
-          return false;
         });
-    } else {
-      console.log('invalid token');
-    }
   }
 }

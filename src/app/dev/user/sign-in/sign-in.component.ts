@@ -21,7 +21,7 @@ interface Token {
         </div>
       </div>
 
-      <form [formGroup]="userForm" (ngSubmit)="onSubmit()" novalidate>
+      <form [formGroup]="userForm" (ngSubmit)="signin()" novalidate>
         <div class="row box-container">
           <div class="box-center">
             <div class="right-side">
@@ -105,12 +105,11 @@ export class SignInComponent implements OnInit {
     return this.userForm.get('password');
   }
 
-  onSubmit() {
+  signin() {
     const loginForm = {
       email: this.userEmail.value,
       password: this.password.value
     };
-    if (this.userForm.status === 'VALID') {
       this.http.post(`${this.appUrl}/auth/login/`, loginForm)
         // request id, password token == token
         .subscribe(res => {
@@ -119,8 +118,5 @@ export class SignInComponent implements OnInit {
           this.router.navigate(['']);
           return false;
         });
-    } else {
-      console.log('invalid token');
-    }
   }
 }
