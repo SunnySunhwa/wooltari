@@ -19,9 +19,13 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
-        "styles.css"
+        "./style/styles.scss"
       ],
-      "scripts": [],
+      "scripts": [
+        "../node_modules/jquery/jquery.min.js",
+        "../node_modules/popper.js/dist/umd/popper.min.js",
+        "../node_modules/bootstrap/dist/js/bootstrap.min.js"
+      ],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",
@@ -54,14 +58,14 @@
     }
   },
   "defaults": {
-    "styleExt": "css",
+    "styleExt": "scss",
     "class": {
       "spec": false
     },
     "component": {
+      "spec": false,
       "inlineStyle": true,
-      "inlineTemplate": true,
-      "spec": false
+      "inlineTemplate": true
     },
     "directive": {
       "spec": false

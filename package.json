@@ -8,10 +8,12 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "json-server": "json-server --watch db.json"
   },
   "private": true,
   "dependencies": {
+    "@agm/core": "^1.0.0-beta.2",
     "@angular/animations": "^5.0.0",
     "@angular/common": "^5.0.0",
     "@angular/compiler": "^5.0.0",
@@ -21,10 +23,17 @@
     "@angular/platform-browser": "^5.0.0",
     "@angular/platform-browser-dynamic": "^5.0.0",
     "@angular/router": "^5.0.0",
+    "bootstrap": "^4.0.0-beta.2",
+    "bootstrap-sass": "^3.3.7",
     "core-js": "^2.4.1",
+    "jquery": "^1.9.1",
     "node-sass": "^4.7.2",
+    "node-sass-loader": "^0.1.7",
+    "nuxt-sass-resources-loader": "^1.1.0",
+    "popper.js": "^1.12.9",
     "rxjs": "^5.5.2",
     "sass": "^1.0.0-beta.3",
+    "sass-loader": "^6.0.6",
     "zone.js": "^0.8.14"
   },
   "devDependencies": {
@@ -43,6 +52,7 @@
     "karma-coverage-istanbul-reporter": "^1.2.1",
     "karma-jasmine": "~1.1.0",
     "karma-jasmine-html-reporter": "^0.2.2",
+    "node-sass": "^4.7.2",
     "protractor": "~5.1.2",
     "ts-node": "~3.2.0",
     "tslint": "~5.7.0",

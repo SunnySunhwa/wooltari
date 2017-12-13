@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-pet-register',
@@ -18,19 +19,17 @@ import { Component, OnInit } from '@angular/core';
         <div class="elem">
           <h4 class="elem-title">Species</h4>
           <div class="elem-conts">
-            <div class="input-group text-radio">
-              <input type="radio" name="species" checked/>
-              <label for="species-cat"><span>Cat</span></label>
-              <input type="radio" name="species" />
-              <label for="species-dog"><span>Dog</span></label>
+            <div class="radio-group species">
+              <input type="radio" id="option-one" name="selector" checked><label for="option-one" >Cat</label>
+              <input type="radio" id="option-two" name="selector"><label for="option-two">Dog</label>
             </div>
           </div>
         </div><!-- // elem1-->
         <div class="elem">
           <h4 class="elem-title">Breeds</h4>
           <div class="elem-conts">
-            <div class="input-group">
-              <select aria-placeholder="Select your pet's breeds">
+             <div class="input-group">
+              <select class="selectpicker" aria-placeholder="Select your pet's breeds">
                 <option>Affenpinscher</option>
                 <option>Afghan Hound</option>
                 <option>Airedale Terrier</option>
@@ -59,7 +58,7 @@ import { Component, OnInit } from '@angular/core';
             <h4 class="elem-title">Number</h4>
             <div class="elem-conts">
               <input type="text" placeholder="registration number">
-              <button>search</button>
+              <button type="button" class="btn btn-radius btn-mint">search</button>
             </div>
         </div> <!-- // elem4 -->
       </div><!-- // box-left-->
@@ -132,12 +131,12 @@ import { Component, OnInit } from '@angular/core';
   </div> <!--// box-container-->
   <div class="row box-footer">
     <div class="btn-set-wrapper">
-      <button class="btn btn-type1 bg-main">Submit</button>
+      <button class="btn btn-type1 bg-orange">Submit</button>
       <button class="btn btn-type1 bg-grey">Cancel</button>
-    </div>
+      </div>
   </div> <!-- // box-footer -->
 </div><!-- // container-->`,
-  styleUrls: ['./pet-style.scss','./base.scss']
+  styleUrls: ['./pet-style.scss']
 })
 export class PetRegisterComponent implements OnInit {
 
