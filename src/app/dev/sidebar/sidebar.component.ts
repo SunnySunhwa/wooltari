@@ -1,42 +1,39 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
+import { list, pet } from '../shared/pet';
 import 'rxjs/add/operator/map';
 
-interface list {
-  owner: object;
-  pets: Array<pet>;
-}
 
-interface pet {
-  pk: number;
-  species: string;
-  breeds: string;
-  name: string;
-}
 
 @Component({
   selector: 'app-sidebar',
   template: `
   <nav>
-      <div class="nav-user" [ngClass]="{sidebarPushRight: isActive}">
+      <div class="menu nav-user" [ngClass]="{sidebarPushRight: isActive}">
         <a [routerLink]= "['/membership']" 
         [routerLinkActive]= "['router-link-active']" 
-        [routerLinkActiveOptions]="{ exact: true }">user<img src="" alt="">
+        [routerLinkActiveOptions]="{ exact: true }">
+        <i fa [name]="'user-circle-o'" [size]="iconSize" ></i>
+        user
         </a>
       </div>
-      <ul class="nav-pet-list">
+      <ul class="menu nav-pet-list">
         <li *ngFor = "let pet of pets">
-          <a [routerLink]="['/register']" 
+          <a [routerLink]="['/dashboard']" 
           [routerLinkActive]="['router-link-active']" 
           [routerLinkActiveOptions]="{ exact: true }">
-          Pet
-          <i class="fa fa-rocket"></i>
+          <!--<a [routerLink]="['/product', 1234]">Product Details</a> -->
+          <i fa [name]="'paw'" [size]="iconSize" ></i>
+          {{pet.name}}
           </a>
         </li>
       </ul>
-      <div class="nav-add-pet"><a href="#"> Add </a></div>
-      <div class="nav-hospital"><a href="#"><img src="" alt="병원"></a></div>
+      <div class="menu nav-add-pet">
+        <a [routerLink]="['/register']"><i fa [name]="'plus-circle'" [size]="iconSize" ></i>Add</a>
+        </div>
+      <div class="menu nav-hospital">
+        <a [routerLink]="['/hospital']"><i fa [name]="'hospital-o'" [size]="iconSize" ></i>병원</a></div>
       
     </nav>
     
@@ -45,6 +42,7 @@ interface pet {
   styleUrls: ['./sidebar.component.scss']
 })
 export class SidebarComponent {
+  iconSize: number = 1;
   list: any;
   appUrl: string = 'http://wooltari-test-server-dev.ap-northeast-2.elasticbeanstalk.com/profile/2/pets/';
   pets: pet[];

@@ -13,7 +13,7 @@ nav {
 
 nav a {
   display: block;
-  /* text-indent: -500em; */
+  // text-indent: -500em;
   height: 5em;
   width: 5em;
   line-height: 5em;
@@ -24,6 +24,10 @@ nav a {
   -webkit-transition: background 0.1s ease-in-out;
   -moz-transition: background 0.1s ease-in-out;
   transition: background 0.1s ease-in-out;
+
+  &i {
+    display: block;
+  }
 }
 
 nav a:hover,

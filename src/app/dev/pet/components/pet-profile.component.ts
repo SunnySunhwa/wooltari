@@ -1,21 +1,16 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { FormControl, FormBuilder, FormGroup } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs/Observable';
 import { list, pet } from '../../shared/pet';
-import 'rxjs/add/operator/map';
-
-
 @Component({
-  selector: 'app-pet-register',
+  selector: 'app-pet',
   template: `
-  <h1>Pet register</h1>
+<h1>Pet profile</h1>
 <div class="container">
 <div class="row profile">
   <h2> pet name</h2>
     <div class="thumb">
       <div> Thumb img </div>
-      <input type="text" [(ngModel)]="petName" placeholder="Write your pet's name" />
+      <input type="text" placeholder="Write your pet's name" />
       <i class="icon-edit">icon</i>
     </div>
   </div>
@@ -24,26 +19,21 @@ import 'rxjs/add/operator/map';
         <div class="elem">
           <h4 class="elem-title">Species</h4>
           <div class="elem-conts">
-            <form [formGroup]="radioGroupForm">
-              <div class="btn-group" ngbRadioGroup name="radioBasic" formControlName="species">
-                <label ngbButtonLabel class="btn-primary">
-                  <input ngbButton type="radio" value="cat">cat
-                </label>
-                <label ngbButtonLabel class="btn-primary">
-                  <input ngbButton type="radio" value="dog">dog
-                </label>
-              </div>
-            </form>
-            <hr>
-            <pre>{{radioGroupForm.value['species']}}</pre>
+            <div class="radio-group species">
+              <input type="radio" id="option-one" name="selector"><label for="option-one" >Cat</label>
+              <input type="radio" id="option-two" name="selector"><label for="option-two">Dog</label>
+            </div>
           </div>
         </div><!-- // elem1-->
         <div class="elem">
           <h4 class="elem-title">Breeds</h4>
           <div class="elem-conts">
              <div class="input-group">
-              <select *ngIf="" class="selectpicker" aria-placeholder="Select your pet's breeds">
-                <option *ngFor="">Affenpinscher</option>
+              <select class="selectpicker" aria-placeholder="Select your pet's breeds">
+                <option>Affenpinscher</option>
+                <option>Afghan Hound</option>
+                <option>Airedale Terrier</option>
+                <option>Others</option>
               </select>
             </div>
           </div>
@@ -51,17 +41,17 @@ import 'rxjs/add/operator/map';
         <div class="elem">
           <h4 class="elem-title">Birth</h4>
           <div class="elem-conts">
-            <form class="form-inline">
-              <div class="form-group">
-                <div class="input-group">
-                  <input class="form-control" placeholder="yyyy-mm-dd"
-                         name="dp" [(ngModel)]="datePicker" ngbDatepicker #d="ngbDatepicker">
-                  <button class="input-group-addon" (click)="d.toggle()" type="button">
-                    <i fa [name]="'calendar'" ></i>
-                  </button>
-                </div>
-              </div>
-            </form>
+            <div class="input-group">
+              <select>
+                <option>YYYY</option>
+              </select>
+              <select>
+                <option>MM</option>
+              </select>
+              <select>
+                <option>DD</option>
+              </select>
+            </div>
           </div>
         </div><!-- // elem3 -->
         <div class="elem">
@@ -141,57 +131,40 @@ import 'rxjs/add/operator/map';
   </div> <!--// box-container-->
   <div class="row box-footer">
     <div class="btn-set-wrapper">
-      <button type="button" class="btn btn-radius btn-footer btn-orange" (onClick)="addPet()">Submit</button>
+      <button type="button" class="btn btn-radius btn-footer btn-orange">Submit</button>
       <button type="button" class="btn btn-radius btn-footer btn-grey4">Cancel</button>
     </div>
   </div> <!-- // box-footer -->
-  <hr/>
-          <pre>DatePicker Model: {{ datePicker | json }}</pre>
 </div><!-- // container-->`,
   styleUrls: ['../pet-style.scss']
 })
-export class PetRegisterComponent implements OnInit {
-  public radioGroupForm: FormGroup;
-  list: any;
-  appUrl: string = 'http://wooltari-test-server-dev.ap-northeast-2.elasticbeanstalk.com/profile/2/pets/';
+export class PetProfileComponent implements OnInit {
+  appUrl: string = 'http://wooltari-test-server-dev.ap-northeast-2.elasticbeanstalk.com/profile/2/pets/9/';
   pets: any;
-  petName: string;
-  datePicker;
-
-
-  constructor(
-    @Inject(FormBuilder) private formBuilder: FormBuilder,
-    @Inject(HttpClient) private http: HttpClient
-) { }
+  pet: any;
+  constructor( @Inject(HttpClient) private http: HttpClient) { }
 
 
   ngOnInit() {
     this.getPetList();
-    this.radioGroupForm = this.formBuilder.group({
-      'species': 'cat'
-    });
   }
 
   getPetList() {
-    this.http.get<list>(this.appUrl)
-      .subscribe(list => {
-        this.list = list;
-        this.pets = this.list.pets;
-        console.log('[list]', list);
-        console.log('[pet-list]', this.pets);
+    this.http.get<pet>(this.appUrl)
+      .subscribe(res => {
+        this.pets = res;
+        this.pet = this.pets.pet;
+       
+        console.log('[pet]', this.pet);
+        // console.log('[pet]', this.pet);
       },
       err => console.log(err.status, err.url),
       () => console.log('Done'));
   }
 
-  addPet(content: string) {
-    const newPet = { pk: this.lastPetPk(), name: this.petName};
-
-    this.http.post(this.appUrl, newPet)
-      .subscribe(() => this.pets = [newPet, ...this.pets]);
-  }
-
-  lastPetPk(): number {
-    return this.pets.length ? Math.max(...this.pets.map(({ pk }) => pk )) + 1 : 1;
+  speciesCheckCat(){
+    if (this.pet.species === 'cat'){
+      return 
+    }
   }
 }

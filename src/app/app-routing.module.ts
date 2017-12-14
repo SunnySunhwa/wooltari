@@ -7,7 +7,7 @@ import { MembershipComponent } from './dev/user/membership/membership.component'
 import { DashboardComponent } from './dev/dashboard/dashboard.component';
 import { MedicalInfoComponent } from './dev/medical-info/components/medical-info.component';
 import {
-  PetComponent,
+  PetProfileComponent,
   PetRegisterComponent
 } from './dev/pet/components';
 import { NgModule } from '@angular/core';
@@ -15,10 +15,11 @@ import { Routes, RouterModule } from '@angular/router';
 import { DevComponent } from './dev/dev.component';
 
 const routes: Routes = [
+  { path: '', component: PetProfileComponent },
   { path: 'signup', component: SignUpComponent },
   { path: 'signin', component: SignInComponent },
   { path: 'membership', component: MembershipComponent },
-  { path: '', component: PetComponent },
+  { path: 'pet-profile', component: PetProfileComponent },
   { path: 'register', component: PetRegisterComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'btn', component: BtnComponent },
