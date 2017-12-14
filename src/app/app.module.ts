@@ -5,6 +5,7 @@ import { AgmCoreModule } from '@agm/core';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { Angular2FontawesomeModule } from 'angular2-fontawesome/angular2-fontawesome'
 
 import { AppComponent } from './app.component';
 import { DevComponent } from './dev/dev.component';
@@ -46,7 +47,8 @@ import { SidebarComponent } from './sidebar/sidebar.component';
       apiKey: 'AIzaSyBRWdV7hVNkFodjr_PouORs8pjwkCcOF0Y'
     }),
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    Angular2FontawesomeModule
   ],
   bootstrap: [AppComponent]
 })

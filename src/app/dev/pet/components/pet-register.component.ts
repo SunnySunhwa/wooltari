@@ -58,7 +58,7 @@ import { HttpClient } from '@angular/common/http';
             <h4 class="elem-title">Number</h4>
             <div class="elem-conts">
               <input type="text" placeholder="registration number">
-              <button type="button" class="btn btn-radius btn-mint">search</button>
+              <button type="button" class="btn btn-small btn-radius btn-mint">search</button>
             </div>
         </div> <!-- // elem4 -->
       </div><!-- // box-left-->
@@ -131,9 +131,9 @@ import { HttpClient } from '@angular/common/http';
   </div> <!--// box-container-->
   <div class="row box-footer">
     <div class="btn-set-wrapper">
-      <button class="btn btn-type1 bg-orange">Submit</button>
-      <button class="btn btn-type1 bg-grey">Cancel</button>
-      </div>
+      <button type="button" class="btn btn-radius btn-footer btn-orange">Submit</button>
+      <button type="button" class="btn btn-radius btn-footer btn-grey4">Cancel</button>
+    </div>
   </div> <!-- // box-footer -->
 </div><!-- // container-->`,
   styleUrls: ['./pet-style.scss']
