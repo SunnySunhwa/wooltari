@@ -19,9 +19,14 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
-        "style/styles.scss"
+        "../node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
+        "./style/styles.scss"
       ],
-      "scripts": [],
+      "scripts": [
+        "../node_modules/jquery/jquery.min.js",
+        "../node_modules/popper.js/dist/umd/popper.min.js",
+        "../node_modules/bootstrap/dist/js/bootstrap.min.js"
+      ],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",

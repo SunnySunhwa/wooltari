@@ -1,8 +1,5 @@
-@import 'bootstrap_custom.scss';
-
-@import 'reset.css';
-@import 'normalize.css';
-@import 'base.scss';
-@import 'pet-style.scss';
-
-/////////////bootstrap 세팅 ////////////////////////
+@import '../../node_modules/bootstrap/scss/bootstrap.scss';
+@import './reset.css';
+@import './normalize.css';
+@import './base.scss';
+@import './card.scss';

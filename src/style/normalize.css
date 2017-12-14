@@ -1,10 +1,8 @@
-<<<<<<< HEAD:src/styles.scss
 /* You can add global styles to this file, and also import other style files */
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
 */
-
 html,
 body,
 div,
@@ -126,8 +124,6 @@ table {
   border-spacing: 0;
 }
 
-=======
->>>>>>> 01c3019c918e23e5a9bd6cab70da13a7128a4d5b:src/style/normalize.css
 /*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */
 
 
@@ -668,7 +664,6 @@ template {
 [hidden] {
   display: none;
 }
-<<<<<<< HEAD:src/styles.scss
 
 /* body*/
 
@@ -677,6 +672,3 @@ body{
   color: #fff;
 }
 
-
-=======
->>>>>>> 01c3019c918e23e5a9bd6cab70da13a7128a4d5b:src/style/normalize.css
