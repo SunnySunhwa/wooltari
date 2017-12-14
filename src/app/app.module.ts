@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AgmCoreModule } from '@agm/core';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpHeaders } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
 
@@ -50,7 +50,7 @@ import { AuthService } from './dev/services/auth.service';
     ReactiveFormsModule
   ],
   providers: [
-    AuthService,
+    AuthService
   ],
   bootstrap: [AppComponent]
 })

@@ -31,39 +31,51 @@ class TryLoginUser {
 export class AuthService {
   appUrl = environment.apiUrl;
   TOKEN_NAME = 'token';
+  PK_NAME = 'key';
   constructor( @Inject(HttpClient) private http: HttpClient) {
-    console.log('[appUrl] ', this.appUrl);
-  }
+  console.log('[appUrl] ', this.appUrl);
+}
   signin(loginForm: TryLoginUser): Observable<SuccessLoginUser> {
     return this.http.post<SuccessLoginUser>(`${this.appUrl}/auth/login/`, loginForm)
       .do(res => {
         this.setToken(res.token);
+        this.setUserPk(res.user.pk);
         console.log(res);
       })
       .shareReplay();
   }
 
-  // signout(): void {
-  //   this.removeToken();
-  // }
+  signout(): void {
+    this.removeToken();
+  }
 
-  // // 토큰 유효성 검증
-  // isAuthenticated(): boolean {
-  //   const token = this.getToken();
-  //   return token ? !this.isTokenExpired(token) : false;
-  // }
+  // 토큰 유효성 검증
+  isAuthenticated(): boolean {
+    const token = this.getToken();
+    console.log(token);
+    return token ? true : false;
+  }
 
-  // getToken(): string {
-  //   return localStorage.getItem(this.TOKEN_NAME);
-  // }
+  getToken(): string {
+    return localStorage.getItem(this.TOKEN_NAME);
+  }
 
   setToken(token: string): void {
     localStorage.setItem(this.TOKEN_NAME, token);
   }
 
-  // removeToken(): void {
-  //   localStorage.removeItem(this.TOKEN_NAME);
-  // }
+  removeToken(): void {
+    console.log(localStorage);
+    localStorage.removeItem(this.TOKEN_NAME);
+  }
+
+  getUserPk(): string {
+    return localStorage.getItem(this.PK_NAME);
+  }
+
+  setUserPk(pk: any): void {
+    localStorage.setItem(this.PK_NAME, pk);
+  }
 
   // /*
   //   token 유효 기간 체크
