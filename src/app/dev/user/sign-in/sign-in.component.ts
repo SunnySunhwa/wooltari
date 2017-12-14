@@ -90,8 +90,8 @@ export class SignInComponent implements OnInit {
   appUrl = environment.appUrl;
 
   constructor( @Inject(FormBuilder) private fb: FormBuilder,
-              @Inject(HttpClient) private http: HttpClient,
-              @Inject(Router) private router: Router) { }
+               @Inject(HttpClient) private http: HttpClient,
+               @Inject(Router) private router: Router) { }
 
   ngOnInit() {
     this.userForm = this.fb.group({
