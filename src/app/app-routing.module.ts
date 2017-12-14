@@ -12,6 +12,7 @@ import {
 } from './dev/pet/components';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { DevComponent } from './dev/dev.component';
 
 const routes: Routes = [
   { path: 'signup', component: SignUpComponent },
@@ -23,7 +24,8 @@ const routes: Routes = [
   { path: 'btn', component: BtnComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'hospital', component: HospitalComponent},
-  { path: 'medical', component: MedicalInfoComponent}
+  { path: 'medical', component: MedicalInfoComponent},
+  { path: '**', component: DevComponent}
 ];
 
 @NgModule({

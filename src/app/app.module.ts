@@ -10,7 +10,6 @@ import { AppComponent } from './app.component';
 import { DevComponent } from './dev/dev.component';
 import { UserComponent } from './dev/user/user.component';
 import { DashboardComponent } from './dev/dashboard/dashboard.component';
-import { SidebarComponent } from './dev/dashboard/sidebar.component';
 import {
   PetComponent,
   PetRegisterComponent
@@ -21,7 +20,7 @@ import { SignUpComponent } from './dev/user/sign-up/sign-up.component';
 import { SignInComponent } from './dev/user/sign-in/sign-in.component';
 import { MembershipComponent } from './dev/user/membership/membership.component';
 import { MedicalInfoComponent } from './dev/medical-info/components/medical-info.component';
-
+import { SidebarComponent } from './sidebar/sidebar.component';
 @NgModule({
   declarations: [
     AppComponent,

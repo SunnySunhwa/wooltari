@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   template: ` 
-  <sidebar></sidebar>
+  <app-sidebar></app-sidebar>
    <router-outlet></router-outlet>
     
   `,

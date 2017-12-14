@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-dashboard',
   template: `
-  <sidebar></sidebar>
+  <app-sidebar></app-sidebar>
   <div class="container">
     <h1>Dashboard</h1>
     <div class="summary-view pet-profile">
