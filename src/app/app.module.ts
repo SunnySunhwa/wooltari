@@ -1,8 +1,7 @@
-import { HospitalComponent } from './dev/hospital/hospital.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AgmCoreModule } from '@agm/core';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpHeaders } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
@@ -10,6 +9,7 @@ import { ModalModule } from 'ngx-bootstrap/modal'
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 
 import { AppComponent } from './app.component';
+import { HospitalComponent } from './dev/hospital/hospital.component';
 import { DevComponent } from './dev/dev.component';
 import { UserComponent } from './dev/user/user.component';
 import { DashboardComponent } from './dev/dashboard/dashboard.component';
@@ -24,6 +24,9 @@ import { SignUpComponent } from './dev/user/sign-up/sign-up.component';
 import { SignInComponent } from './dev/user/sign-in/sign-in.component';
 import { MembershipComponent } from './dev/user/membership/membership.component';
 import { MedicalInfoComponent } from './dev/medical-info/medical-info.component';
+import { PetStateComponent } from './dev/pet-state/pet-state.component';
+
+import { AuthService } from './dev/services/auth.service';
 
 @NgModule({
   declarations: [
@@ -40,6 +43,7 @@ import { MedicalInfoComponent } from './dev/medical-info/medical-info.component'
     MembershipComponent,
     SidebarComponent,
     HospitalComponent,
+    PetStateComponent,
     MedicalInfoComponent
   ],
   imports: [
@@ -54,6 +58,9 @@ import { MedicalInfoComponent } from './dev/medical-info/medical-info.component'
     ReactiveFormsModule,
     ModalModule.forRoot(),
     BsDatepickerModule.forRoot()
+  ],
+  providers: [
+    AuthService
   ],
   bootstrap: [AppComponent]
 })

@@ -1,13 +1,29 @@
+import { AuthService } from './../../services/auth.service';
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, Inject } from '@angular/core';
 import { FormControl, FormGroup, FormArray, FormBuilder, Validators } from '@angular/forms';
 import { PasswordValidator } from '../password-validator';
+import { Router } from '@angular/router';
+import { HttpHeaderResponse } from '@angular/common/http/src/response';
+import { environment } from '../../../../environments/environment';
+
+interface User {
+  pk: number;
+  user_type: string;
+  email: string;
+  nickname: string;
+  is_active: string;
+  date_joined: string;
+}
 
 @Component({
   selector: 'app-membership',
   template: `
     <h1>Membership</h1>
     <div class="container">
-      <form [formGroup]="userForm" (ngSubmit)="onSubmit()" novalidate>
+    <button type="button" (ngSubmit)="logout()">로그아웃</button>
+      <!-- 리엑티브 폼 그룹 -->
+      <form [formGroup]="userForm" (ngSubmit)="editProfile()" novalidate>
         <div class="row profile">
           <!-- 유저네임 뷰 -->
           <h2>user name</h2>
@@ -29,18 +45,12 @@ import { PasswordValidator } from '../password-validator';
               <h4 class="elem-title">User Email</h4>
               <div class="elem-conts">
                 <div class="input-email">
-                  Your email will be located.
+
                 </div>
               </div>
             </div>
             <!-- 유저 비밀번호 입력창 -->
             <div formGroupName="passwordGroup">
-              <div class="elem">
-                <h4 class="elem-title">Current Password</h4>
-                <div class="input-password">
-                  <input type="password" name="userpassword" id="user-password" class="" placeholder="Enter Password">
-                </div>
-              </div>
 
               <div class="elem">
                 <h4 class="elem-title">New Password</h4>
@@ -95,10 +105,19 @@ export class MembershipComponent implements OnInit {
   //서비스로 빼야 할 것 같은데 일단은 이렇게 작업해두자
   userForm: FormGroup;
   regexr = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/;
+  appUrl = environment.apiUrl;
+  Email: string;
+  Nickname: string;
 
-  constructor( @Inject(FormBuilder) private fb: FormBuilder) { }
+  constructor(
+    @Inject(FormBuilder) private fb: FormBuilder,
+    @Inject(AuthService) private auth: AuthService,
+    @Inject(Router) private router: Router,
+    @Inject(HttpClient) private http: HttpClient,
+  ) { }
 
   ngOnInit() {
+    this.getProfile();
     this.userForm = this.fb.group({
       userName: ['', Validators.required],
       userEmail: ['', [
@@ -115,9 +134,6 @@ export class MembershipComponent implements OnInit {
   get userName() {
     return this.userForm.get('userName');
   }
-  get userEmail() {
-    return this.userForm.get('userEmail');
-  }
   get passwordGroup() {
     return this.userForm.get('passwordGroup');
   }
@@ -128,9 +144,32 @@ export class MembershipComponent implements OnInit {
     return this.userForm.get('passwordGroup.confirmPassword');
   }
 
-  onSubmit() {
-    // 현재 그냥 리셋이지만 나중에 서버와 연결하여 json의 payload로 보내야 할 처리과정을 써야함
-    this.userForm.reset();
+  getProfile() {
+    this.http.get<User>(`${this.appUrl}/profile/${this.auth.getUserPk}/`)
+      .subscribe(res => {
+        this.Email = res.email;
+        this.Nickname = res.nickname;
+        console.log(res);
+        console.log('회원정보 불러오기 성공!');
+      });
   }
 
+  editProfile() {
+    const editProfileForm = {
+      nickname: this.userName.value,
+      password1: this.password.value,
+      password2: this.confirmPassword.value
+    };
+    console.log(`[payload] ${editProfileForm}`);
+    this.http.post(`${this.appUrl}/profile/signup/`, editProfileForm)
+      .subscribe(res => {
+        console.log(res);
+        console.log('회원정보 수정 성공!');
+        this.router.navigate(['membership']);
+      });
+  }
+
+  logout() {
+    this.auth.signout();
+  }
 }
