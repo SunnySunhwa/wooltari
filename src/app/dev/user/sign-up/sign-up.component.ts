@@ -104,15 +104,15 @@ import { PasswordValidator } from '../password-validator';
   styleUrls: ['../user-style.scss']
 })
 export class SignUpComponent implements OnInit {
-  // 서비스로 빼야 할 것 같은데 일단은 이렇게 작업해두자
   userForm: FormGroup;
   regexr = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/;
-  appUrl = environment.appUrl;
-  message: string;
+  appUrl = environment.apiUrl;
 
-  constructor( @Inject(FormBuilder) private fb: FormBuilder,
-              @Inject(HttpClient) private http: HttpClient,
-              @Inject(Router) private router: Router) { }
+  constructor(
+    @Inject(FormBuilder) private fb: FormBuilder,
+    @Inject(HttpClient) private http: HttpClient,
+    @Inject(Router) private router: Router
+  ) { }
 
   ngOnInit() {
     this.userForm = this.fb.group({
@@ -144,8 +144,7 @@ export class SignUpComponent implements OnInit {
     return this.userForm.get('passwordGroup.confirmPassword');
   }
 
-
-  singup() {
+  signup() {
     const signupForm = {
       nickname: this.userName.value,
       email: this.userEmail.value,
@@ -153,11 +152,11 @@ export class SignUpComponent implements OnInit {
       password2: this.confirmPassword.value
     };
     console.log(`[payload] ${signupForm}`);
-      this.http.post(`${this.appUrl}/auth/signup/`, signupForm)
-        .subscribe(res => {
-          console.log(res);
-          console.log('회원가입 성공!');
-          this.router.navigate(['signin']);
-        });
+    this.http.post(`${this.appUrl}/auth/signup/`, signupForm)
+      .subscribe(res => {
+        console.log(res);
+        console.log('회원가입 성공!');
+        this.router.navigate(['signin']);
+      });
   }
 }
